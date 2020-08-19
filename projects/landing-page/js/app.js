@@ -64,6 +64,8 @@ const sectionActive = () => {
     }
 }
 
+sectionActive();
+
 // Scroll to anchor ID using scrollTO event
 
 
