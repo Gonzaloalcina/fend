@@ -18,6 +18,8 @@
  * 
 */
 
+const topmenu = document.getElementById('navbar__list');
+const sections = document.querySelectorAll('section');
 
 /**
  * End Global Variables
