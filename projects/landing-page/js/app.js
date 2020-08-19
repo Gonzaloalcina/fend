@@ -43,7 +43,7 @@ const navBuilder = () => {
     sections.forEach(section => {
         let sectionId = section.id; //store ids of sections
         let sectionDataNav = section.dataset.nav; //store datanav
-        navCode = `<li><a class= "menu__link" href="#${sectionId}">${sectionDataNav}</a></li>`;
+        navCode += `<li><a class="menu__link" href="#${sectionId}">${sectionDataNav}</a></li>`;
     });
     topmenu.innerHTML = navCode;
 }
