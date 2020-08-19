@@ -53,15 +53,15 @@ navBuilder();
 // Add class 'active' to section when near top of viewport
 
 const sectionActive = () => {
-    for (const section of sections) {
+    sections.forEach (section => {
         const boxPlace = section.getBoundingClientRect();
 
         if (boxPlace.top <= 150 && boxPlace.bottom >= 150) {
-            section.classList.add('your-active-class');
+            section.classList.add("your-active-class");
         } else {
-            section.classList.remove('your-active-class');
+            section.classList.remove("your-active-class");
         }
-    }
+    });
 }
 
 sectionActive();
