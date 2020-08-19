@@ -40,6 +40,11 @@ const sections = document.querySelectorAll('section');
 const navBuilder = () => {
     //var where we are going to write the html
     let navCode = '';
+    sections.forEach(section => {
+        let sectionId = section.id; //store ids of sections
+        let sectionDataNav = section.dataset.nav; //store datanav
+
+    }
     
 }
 
