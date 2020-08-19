@@ -37,6 +37,11 @@ const sections = document.querySelectorAll('section');
 
 // build the nav
 
+const navBuilder = () => {
+    //var where we are going to write the html
+    let navCode = '';
+    
+}
 
 // Add class 'active' to section when near top of viewport
 
