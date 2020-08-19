@@ -52,6 +52,17 @@ navBuilder();
 
 // Add class 'active' to section when near top of viewport
 
+const sectionActive = () => {
+    for (const section of sections) {
+        const boxPlace = section.getBoundingClientRect();
+
+        if (boxPlace.top <= 150 && boxPlace.bottom >= 150) {
+            section.classList.add('your-active-class');
+        } else {
+            section.classList.remove('your-active-class');
+        }
+    }
+}
 
 // Scroll to anchor ID using scrollTO event
 
