@@ -44,7 +44,7 @@ const navBuilder = () => {
     sections.forEach(section => {
         let sectionId = section.id; //store ids of sections
         let sectionDataNav = section.dataset.nav; //store datanav
-        navCode += `<li><a class="menu__link" "${sectionId}" href="#${sectionId}">${sectionDataNav}</a></li>`;
+        navCode += `<li><a class="menu__link" "active" href="#${sectionId}">${sectionDataNav}</a></li>`;
     });
     topMenu.innerHTML = navCode;
 }
@@ -59,16 +59,9 @@ function sectionActive () {
 
         if (boxPlace.top <= 150 && boxPlace.bottom >= 150) {
             section.classList.add("your-active-class");
-            for (const item of navItems) {
-                if(item.classList.contains(section.id)) {
-                    item.classList.add("active");
-                }
-            }
         } else {
             section.classList.remove("your-active-class");
-            for (const item of navItems) {
-                item.classList.remove("active");
-            }
+            navItems.classList.remove("active");
         }
     }
 }
