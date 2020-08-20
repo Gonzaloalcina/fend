@@ -88,6 +88,10 @@ section {
     transition: ease 0.3s all;
 }
 
+.navbar__menu .menu__link.active {
+    background: red;
+} 
+
 
 /* Header Styles */
 .page__header {

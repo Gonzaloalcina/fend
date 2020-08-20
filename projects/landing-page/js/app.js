@@ -18,8 +18,9 @@
  * 
 */
 
-const topmenu = document.getElementById('navbar__list');
+const topMenu = document.getElementById('navbar__list');
 const sections = document.querySelectorAll('section');
+const navItems = document.getElementsByClassName("menu__link");
 
 /**
  * End Global Variables
@@ -45,7 +46,7 @@ const navBuilder = () => {
         let sectionDataNav = section.dataset.nav; //store datanav
         navCode += `<li><a class="menu__link" "${sectionId}" href="#${sectionId}">${sectionDataNav}</a></li>`;
     });
-    topmenu.innerHTML = navCode;
+    topMenu.innerHTML = navCode;
 }
 
 navBuilder();
@@ -58,9 +59,16 @@ function sectionActive () {
 
         if (boxPlace.top <= 150 && boxPlace.bottom >= 150) {
             section.classList.add("your-active-class");
-
+            for (const item of navItems) {
+                if(item.classList.contains(section.id)) {
+                    item.classList.add("active");
+                }
+            }
         } else {
             section.classList.remove("your-active-class");
+            for (const item of navItems) {
+                item.classList.remove("active");
+            }
         }
     }
 }
