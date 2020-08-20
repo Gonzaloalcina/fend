@@ -43,7 +43,7 @@ const navBuilder = () => {
     sections.forEach(section => {
         let sectionId = section.id; //store ids of sections
         let sectionDataNav = section.dataset.nav; //store datanav
-        navCode += `<li><a class="menu__link" href="#${sectionId}">${sectionDataNav}</a></li>`;
+        navCode += `<li><a class="menu__link" "${sectionId}" href="#${sectionId}">${sectionDataNav}</a></li>`;
     });
     topmenu.innerHTML = navCode;
 }
@@ -58,6 +58,7 @@ function sectionActive () {
 
         if (boxPlace.top <= 150 && boxPlace.bottom >= 150) {
             section.classList.add("your-active-class");
+
         } else {
             section.classList.remove("your-active-class");
         }
@@ -79,6 +80,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+//Highlight nav items when active
+
+/*const navItems = document.getElementsByClassName("menu__link");
+
+function addClass () {
+    for (const item of navItems) {
+        item.classList.add("highlight");
+    }
+}
+
+addClass();*/
+
+
 
 
 /**
