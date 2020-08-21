@@ -51,7 +51,7 @@ const navBuilder = () => {
 
 navBuilder();
 
-// Add class 'active' to section when near top of viewport
+// Add class 'active' to section when near top of viewport and highlight nav items
 
 function sectionActive () {
     for (const section of sections) {
@@ -87,16 +87,33 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+/* Add a scroll to top button that's only visible when 
+the user scrolls bellow the fold of the page */
+
+const topButton = document.getElementById('button');
+
+window.onscroll = function () {scrollFunction()};
+
+function scrollFunction () {
+    if (document.body.scrollTop > 20 || 
+    document.documentElement.scrolltop > 20) {
+        topButton.style.display = "block";
+    } else {
+        topButton.style.display = "none";
+    }
+}
+
+function topFunction () {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
+
 /**
  * End Main Functions
  * Begin Events
  * 
 */
 
-// Build menu 
-
-// Scroll to section on link click
-
-// Set sections as active
 
 

@@ -226,3 +226,24 @@ section.your-active-class .landing__container::after {
 		           rotate(-360deg);
 	}
 }
+
+/*Button style*/
+
+#button {
+    display: none;
+    z-index: 99;
+    cursor: pointer;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: all .3s ease-in-out;
+}
+
+#button:hover {
+    background-color: blue;
+}
