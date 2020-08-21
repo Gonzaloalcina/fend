@@ -21,6 +21,8 @@
 const topMenu = document.getElementById('navbar__list');
 const sections = document.querySelectorAll('section');
 const navItems = document.getElementsByClassName("menu__link");
+const topButton = document.getElementById("button");
+
 
 /**
  * End Global Variables
@@ -90,8 +92,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 /* Add a scroll to top button that's only visible when 
 the user scrolls bellow the fold of the page */
 
-const topButton = document.getElementById("button");
-
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -103,12 +103,12 @@ function scrollFunction() {
 
 }
 
+//Smooth scroll to top
+
 topButton.addEventListener('click', function(e) {
     e.preventDefault();
 
     window.scrollTo({top: 0, behavior: 'smooth'});
-    /*document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;*/
 });
 
 /**
