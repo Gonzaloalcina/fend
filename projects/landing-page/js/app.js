@@ -90,24 +90,26 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 /* Add a scroll to top button that's only visible when 
 the user scrolls bellow the fold of the page */
 
-const topButton = document.getElementById('button');
+const topButton = document.getElementById("button");
 
-window.onscroll = function () {scrollFunction()};
+window.onscroll = function() {scrollFunction()};
 
-function scrollFunction () {
-    if (document.body.scrollTop > 20 || 
-    document.documentElement.scrolltop > 20) {
-        topButton.style.display = "block";
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        topButton.style.display = "inline-block";
     } else {
         topButton.style.display = "none";
     }
+
 }
 
-function topFunction () {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
+topButton.addEventListener('click', function(e) {
+    e.preventDefault();
 
+    window.scrollTo({top: 0, behavior: 'smooth'});
+    /*document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;*/
+});
 
 /**
  * End Main Functions
