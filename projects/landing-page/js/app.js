@@ -44,7 +44,7 @@ const navBuilder = () => {
     sections.forEach(section => {
         let sectionId = section.id; //store ids of sections
         let sectionDataNav = section.dataset.nav; //store datanav
-        navCode += `<li><a class="menu__link" "active" href="#${sectionId}">${sectionDataNav}</a></li>`;
+        navCode += `<li><a class="menu__link ${sectionId}" href="#${sectionId}">${sectionDataNav}</a></li>`;
     });
     topMenu.innerHTML = navCode;
 }
@@ -58,10 +58,15 @@ function sectionActive () {
         const boxPlace = section.getBoundingClientRect();
 
         if (boxPlace.top <= 150 && boxPlace.bottom >= 150) {
+            const id = section.getAttribute("id");
+            document.querySelector(`.${id}`).classList.add("active");
             section.classList.add("your-active-class");
         } else {
+            const id = section.getAttribute("id");
+            document.querySelector(`.${id}`).classList.remove("active");
             section.classList.remove("your-active-class");
-            navItems.classList.remove("active");
+            
+            
         }
     }
 }
@@ -81,21 +86,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
-
-//Highlight nav items when active
-
-/*const navItems = document.getElementsByClassName("menu__link");
-
-function addClass () {
-    for (const item of navItems) {
-        item.classList.add("highlight");
-    }
-}
-
-addClass();*/
-
-
-
 
 /**
  * End Main Functions
