@@ -17,6 +17,7 @@ app.use(bodyParser.json());
 
 // Cors for cross origin allowance
 const cors = require('cors');
+const { request } = require('http');
 app.use(cors());
 
 // Initialize the main project folder
@@ -32,3 +33,17 @@ function listening() {
     console.log('server running');
     console.log(`running on localhost: ${port}`);
 }
+
+//Get route that returns the project data
+app.get('getData', (req, res)=>{
+    res.send(projectData);
+});
+
+//Post route receiving temp, date and user response
+app.post('addData', (req, res)=>{
+    let data = request.body;
+    projectData['temp'] = data.temp;
+    projectData['feel'] = data.feeling;
+    projectData['date'] = data.date;
+    res.send(projectData);
+})
