@@ -47,13 +47,3 @@ app.post('/addData', (req, res)=>{
     projectData["date"] = data.date;
     res.send(projectData);
 });
-
-/*app.post('/addData', addData);
-function addData (req, res) {
-    const newEntry = {
-        temperature: req.body.temperature,
-        date: req.body.date,
-        userResponse: req.body.userResponse
-    }
-    projectData.unshift(newEntry);
-};*/
