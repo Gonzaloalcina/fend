@@ -5,7 +5,7 @@ let apiKey = '0d20ff942186c94d0f12c1bc0f393ab8';
 // Create a new date instance dynamically with JS
 let d = new Date();
 //let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
-let newDate = d.toLocaleString('ES', { month: 'long', day: 'numeric', year:'numeric'});
+let newDate = d.toLocaleString('en-ES', { month: 'long', day: 'numeric', year:'numeric'});
 
 document.getElementById('generate').addEventListener('click', action);
 
@@ -13,6 +13,9 @@ function action(e){
     const postalCode = document.getElementById('zip').value;
     const feelings = document.getElementById('feelings').value;
     console.log(newDate);
+    /*if (postalCode.length === 0 || feel.length === 0) {
+        alert('Are you missing something?');
+    } */
     getTemp(baseUrl,postalCode,apiKey)
     .then(function (data){
         //Route
@@ -67,7 +70,7 @@ const updateUI = async () => {
         const allData = await request.json();
         console.log('Updating UI');
         document.getElementById('date').innerHTML = allData.date;
-        document.getElementById('temp').innerHTML = allData.temp;
+        document.getElementById('temp').innerHTML = `${allData.temp}°`;
         document.getElementById('content').innerHTML = allData.feel;
     }
     catch(error) {
