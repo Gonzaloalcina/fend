@@ -5,13 +5,19 @@ body{
 
 #app{
     display: grid;
-    grid-auto-rows: minmax(150px, auto);
-    /* grid-template-columns:  */
-    height:100vh;
+    /*grid-auto-rows: minmax(150px, auto);*/
+    grid-template-columns: 20% 20%;
+    grid-template-rows: 10% 10% 10% 10%;
+    grid-template-areas:
+    "title title"
+    "zip feel"
+    "button button"
+    "data data";
+    height: 100vh;
     background: #f23557;
     color: #f0d43a;
     justify-content: center;
-    grid-gap: 1em;
+    grid-gap: 3em;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
 }
@@ -22,10 +28,11 @@ body{
 
 .entry{
     background: rgba(59, 74, 107, .4);
+    grid-area: data;
 }
 
 #entryHolder{
-
+    
 }
 
 #date{
@@ -41,8 +48,24 @@ body{
 }
 
 .headline {
-
+    grid-area: title;
 }
+
+.zip {
+    grid-area: zip;
+}
+
+
+.feel {
+   grid-area: feel;
+}
+
+.push {
+    grid-area: button;
+}
+
+
+
 .title{
 
 }
@@ -74,6 +97,7 @@ button{
     border: none;
     box-shadow: 2px 4px 5px #444;
 }
+
 h1{
     font-size: 36px;
 }
