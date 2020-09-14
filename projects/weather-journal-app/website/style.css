@@ -49,6 +49,7 @@ body{
 
 .headline {
     grid-area: title;
+    margin: auto;
 }
 
 .zip {
@@ -62,6 +63,7 @@ body{
 
 .push {
     grid-area: button;
+    margin: auto;
 }
 
 
