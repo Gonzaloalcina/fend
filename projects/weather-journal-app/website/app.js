@@ -5,7 +5,7 @@ let apiKey = '0d20ff942186c94d0f12c1bc0f393ab8';
 // Create a new date instance dynamically with JS
 let d = new Date();
 //let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
-let newDate = d.toLocaleString('en-US', { month: 'long', day: 'numeric', year:'numeric'});
+let newDate = d.toLocaleString('ES', { month: 'long', day: 'numeric', year:'numeric'});
 
 document.getElementById('generate').addEventListener('click', action);
 
@@ -26,7 +26,7 @@ function action(e){
 
 //Async GET
 const getTemp = async (baseUrl, postalCode, apiKey)=>{
-    const response = await fetch(baseUrl + postalCode + ',us' + '&APPID=' + apiKey)
+    const response = await fetch(baseUrl + postalCode + ',es' + '&units=metric' + '&APPID=' + apiKey)
     console.log(response);
     try {
         const data = await response.json();
