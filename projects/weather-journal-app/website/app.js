@@ -12,11 +12,28 @@ function action(e){
     const postalCode = document.getElementById('zip').value;
     const feelings = document.getElementById('feelings').value;
     console.log(newDate);
-    getTemperature(baseUrl,postalCode,apiKey)
+    getTemp(baseUrl,postalCode,apiKey)
     .then(function (data){
+        //Route
         postData('http://localhost:8000/addData', {temperature: data.main.temp, date: newDate, user_response: feelings})
     .then(function(){
+        //User Interface
         updateUI()
         })    
     })
+}
+
+//Async GET
+const getTemp = async (baseUrl, postalCode, apiKey)=>{
+    const response = await fetch(baseUrl + postalCode + ',ES' + '&&APPID=' + apiKey)
+    console.log(response);
+    try {
+        const data = await response.json();
+        console.log(data);
+        console.log('ok');
+        return data;
+    }
+    catch(error) {
+        console.log('error', error);
+    }
 }
