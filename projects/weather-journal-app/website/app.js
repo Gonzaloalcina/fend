@@ -39,7 +39,6 @@ const getTemp = async (baseUrl, postalCode, apiKey)=>{
 }
 
 //Async POST
-
 const postData = async (url = '', data = {})=>{
     const postRequest = await fetch(url, {
         method: 'POST',
@@ -59,3 +58,19 @@ const postData = async (url = '', data = {})=>{
         console.log('error', error);
     }
 }
+
+//User Interface 
+const updateUI = async () => {
+    const request = await fetch('http://localhost:800/getData');
+    try {
+        const allData = await request.json();
+        console.log('Updating UI');
+        document.getElementById('date').innerHTML = allData.date;
+        document.getElementById('temp').innerHTML = allData.temperature;
+        document.getElementById('content').innerHTML = allData.user_response;
+    }
+    catch(error) {
+        console.log('error, error');
+    }
+}
+
