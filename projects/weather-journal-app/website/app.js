@@ -30,10 +30,32 @@ const getTemp = async (baseUrl, postalCode, apiKey)=>{
     try {
         const data = await response.json();
         console.log(data);
-        console.log('ok');
+        console.log('ok get');
         return data;
     }
     catch(error) {
+        console.log('error', error);
+    }
+}
+
+//Async POST
+
+const postData = async (url = '', data = {})=>{
+    const postRequest = await fetch(url, {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    });
+    try {
+        console.log('ok post');
+        const newData = await postRequest.json();
+        console.log(newData, 'ok post vel');
+        return newData;
+    }
+    catch(error){
         console.log('error', error);
     }
 }
