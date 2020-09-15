@@ -11,7 +11,7 @@ The project requires you to create an asynchronous web app that uses Web API and
 * Use credentials from OpenWeatherMap
 * Set the `<app.js>` using
     * `<async>` functions
-    * `<fetch>``
+    * `<fetch>`
     * GET and POST requests
 * Update the UI with data that includes
     * temperature
@@ -27,7 +27,8 @@ The project requires you to create an asynchronous web app that uses Web API and
 * [Google Fonts](https://fonts.google.com/)
 
 ## Result
-<iframe src="https://drive.google.com/file/d/1evGOlwrDZaogTkHjhUU6BELI3L3V9lVN/preview" width="640" height="480"></iframe>
+![Video example]
+(https://drive.google.com/file/d/1evGOlwrDZaogTkHjhUU6BELI3L3V9lVN/view)
 
 
 
