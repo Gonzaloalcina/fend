@@ -27,7 +27,7 @@ The project requires you to create an asynchronous web app that uses Web API and
 * [Google Fonts](https://fonts.google.com/)
 
 ## Result
-
+![Result](https://github.com/Gonzaloalcina/fend/blob/refresh-2019/projects/weather-journal-app/website/Gif%20result/Weather%20Journal%20App.png)
 
 
 
