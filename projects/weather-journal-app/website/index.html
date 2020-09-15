@@ -1,38 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Weather Journal</title>
-<link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Weather Journal</title>
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
- <body>
-<main id = "app">
-  <header class ="holder headline">
-    Weather Journal App
-  </header>
-  <section class ="holder zip">
-    <label for="zip">Enter Zipcode here</label>
-    <input type="text" id="zip" placeholder="enter zip code here">
-  </section>
-  <section class ="holder feel">
-    <label for="feelings">How are you feeling today?</label>
-    <textarea class= "myInput" id="feelings" placeholder="Enter your feelings here"></textarea>
-  </section>
-  <section class = "push">
-    <button id="generate" type = "submit"> Generate </button>
-  </section>  
-  <section class ="holder entry">
-    <div class = "title">Most Recent Entry</div>
-    <div id = "entryHolder">
-      <div id = "date"></div> 
-      <div id = "temp"></div>
-    <div id = "content"></div>
-   </div>
-  </section>
-</main>
-<script src="app.js" type="text/javascript"></script>
-
+<body>
+  <main id = "app">
+    <header class ="holder headline">
+      <h1>Weather Journal App</h1>
+    </header>
+    <section class ="holder zip">
+      <label for="zip">Where are you?</label>
+      <input type="text" id="zip" placeholder="Enter zip code here">
+    </section>
+    <section class ="holder feel">
+      <label for="feelings">How are you feeling today?</label>
+      <textarea class= "myInput" id="feelings" placeholder="Enter your feelings here"></textarea>
+    </section>
+    <section class = "push">
+      <button id="generate" type = "submit"> Let´s Go! </button>
+    </section>  
+    <section class ="holder entry">
+      <div class = "title">Most Recent Entry</div>
+      <div id = "entryHolder">
+        <div id = "date"></div> 
+        <div id = "temp"></div>
+        <div id = "content"></div>
+      </div>
+    </section>
+  </main>
+  <script src="app.js" type="text/javascript"></script>
 </body>
 </html>

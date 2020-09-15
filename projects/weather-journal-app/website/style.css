@@ -1,6 +1,7 @@
 body{
-    background: #fffff8;
+    /*background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);*/
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #fff;
 }
 
 #app{
@@ -13,10 +14,11 @@ body{
     "zip feel"
     "button button"
     "data data";
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
     height: 100vh;
-    background: #f23557;
-    color: #f0d43a;
+    color: #253031;
     justify-content: center;
+    justify-items: center;
     grid-gap: 3em;
     font-size: 20px;
     font-family: 'Nunito', sans-serif;
@@ -29,6 +31,10 @@ body{
 .entry{
     background: rgba(59, 74, 107, .4);
     grid-area: data;
+    height: 150px;
+    width: 400px;
+    border-radius: 10px;
+    padding: 5%;
 }
 
 #entryHolder{
@@ -54,11 +60,13 @@ body{
 
 .zip {
     grid-area: zip;
+    width: 200px;
 }
 
 
 .feel {
    grid-area: feel;
+   width: 250px;
 }
 
 .push {
@@ -75,40 +83,54 @@ body{
 /*  Basic Styling To Override Default For Basic HTML Elements */
 label{
     display:block;
-    font-size: 27px;
+    font-size: 18px;
+    width: 100%;
+    padding-left: 3%;
 }
 
 input{
-    display:block;
-    height: 60px;
-    width: 320px;
-    background:#22b2da;
-    color: #f0d43a;
-    font-size: 20px;
-    font-family: 'Oswald', sans-serif;
+    display: block;
+    height: 50px;
+    width: 100%;
+    background:#fff;
+    color: #253031;
+    font-size: 14px;
+    font-family: 'Nunito', sans-serif;
     border: none;
+    border-radius: 10px;
+    padding-left: 10%;
+    margin: 3%;
 }
 
 button{
+    cursor: pointer;
     width: 400px;
     height: 100px;
     background: #3b4a6b;
-    color: #f0d43a;
+    color: #F9C80E;
     font-size: 26px;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Nunito', sans-serif;
     border: none;
     box-shadow: 2px 4px 5px #444;
+    border-radius: 10px;
+    margin: 3%;
 }
 
 h1{
-    font-size: 36px;
+    font-size: 24px;
 }
 
 textarea{
-    background:#22b2da;
-    color: #f0d43a;
-    font-size: 20px;
-    font-family: 'Oswald', sans-serif;
+    background:#fff;
+    color: #253031;
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+    font-family: 'Nunito', sans-serif;
+    border: none;
+    border-radius: 10px;
+    padding: 5%;
+    margin: 3%;
 }
 /* Reset style for HTML element on active to have no border*/
 input:focus,
@@ -119,19 +141,19 @@ button:focus {
 }
 /* Style for Placeholder Text*/
 ::placeholder { /* Firefox, Chrome, Opera */ 
-    color: #f0d43a; 
-    font-family: 'Oswald', sans-serif;
+    color: #253031; 
+    font-family: 'Nunito', sans-serif;
 
 } 
   
 :-ms-input-placeholder { /* Internet Explorer 10-11 */ 
-    color: #f0d43a; 
-    font-family: 'Oswald', sans-serif;
+    color: #253031; 
+    font-family: 'Nunito', sans-serif;
 
 } 
   
 ::-ms-input-placeholder { /* Microsoft Edge */ 
-    color: #f0d43a; 
-    font-family: 'Oswald', sans-serif;
+    color: #253031; 
+    font-family: 'Nunito', sans-serif;
 
 } 
