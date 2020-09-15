@@ -27,8 +27,7 @@ The project requires you to create an asynchronous web app that uses Web API and
 * [Google Fonts](https://fonts.google.com/)
 
 ## Result
-![Video example]
-(https://drive.google.com/file/d/1evGOlwrDZaogTkHjhUU6BELI3L3V9lVN/view)
+
 
 
 
