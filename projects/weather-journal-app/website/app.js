@@ -16,6 +16,9 @@ function action(e){
  
     getTemp(baseUrl,postalCode, apiKey)
     .then(function (data){
+         /*if(Response.status === "404"){
+            alert('Wrong zip code, try again!');
+        }*/
         //Route
         postData('http://localhost:8000/addData', { date: newDate, temp: data.main.temp, feel: feelings})
     .then(function(){
@@ -25,9 +28,11 @@ function action(e){
     })
 }
 
+
+
 //Async GET
-const getTemp = async (baseUrl, postalCode, apiKey)=>{
-    const response = await fetch(baseUrl + postalCode + ',us' + '&units=metric' + '&APPID=' + apiKey)
+const getTemp = async (baseUrl, postalCode, apiKey) => {
+    const response = await fetch(baseUrl + postalCode + ',us' + '&units=metric' + '&APPID=' + apiKey);
     console.log(response);
     try {
         const data = await response.json();
@@ -35,13 +40,13 @@ const getTemp = async (baseUrl, postalCode, apiKey)=>{
         console.log('ok get');
         return data;
     }
-    catch(error) {
+    catch (error) {
         console.log('error', error);
     }
 }
 
 //Async POST
-const postData = async (url = '', data = {})=>{
+const postData = async (url = '', data = {}) => {
     const postRequest = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
