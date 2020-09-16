@@ -16,15 +16,14 @@ function action(e){
  
     getTemp(baseUrl,postalCode, apiKey)
     .then(function (data){
-         /*if(Response.status === "404"){
+         if(String(data.cod) === '404'){
             alert('Wrong zip code, try again!');
-        }*/
-        //Route
-        postData('http://localhost:8000/addData', { date: newDate, temp: data.main.temp, feel: feelings})
-    .then(function(){
-        //User Interface
-        updateUI()
-        })    
+        } else {
+            postData('http://localhost:8000/addData', { date: newDate, temp: data.main.temp, feel: feelings})
+            .then(function(){
+            //User Interface
+            updateUI()
+        })}  
     })
 }
 
