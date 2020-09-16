@@ -14,7 +14,7 @@ function action(e){
     const feelings = document.getElementById('feelings').value;
     console.log(newDate);
  
-    getTemp(baseUrl,postalCode,apiKey)
+    getTemp(baseUrl,postalCode, apiKey)
     .then(function (data){
         //Route
         postData('http://localhost:8000/addData', { date: newDate, temp: data.main.temp, feel: feelings})
