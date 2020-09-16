@@ -13,13 +13,11 @@ function action(e){
     const postalCode = document.getElementById('zip').value;
     const feelings = document.getElementById('feelings').value;
     console.log(newDate);
-    /*if (postalCode.length === 0 || feel.length === 0) {
-        alert('Are you missing something?');
-    } */
+ 
     getTemp(baseUrl,postalCode,apiKey)
     .then(function (data){
         //Route
-        postData('http://localhost:8000/addData', {temp: data.main.temp, date: newDate, feel: feelings})
+        postData('http://localhost:8000/addData', { date: newDate, temp: data.main.temp, feel: feelings})
     .then(function(){
         //User Interface
         updateUI()
