@@ -1,10 +1,16 @@
-var path = require('path')
-const express = require('express')
-const mockAPIResponse = require('./mockAPI.js')
+const dotenv = require('dotenv');
+dotenv.config();
+const API_KEY = process.env.API_KEY;
+
+var path = require('path');
+const express = require('express');
+const mockAPIResponse = require('./mockAPI.js');
+const bodyParser = require('body-parser');
 
 const app = express()
 
-app.use(express.static('dist'))
+app.use(express.static('dist'));
+app.use(bodyParser.text());
 
 console.log(__dirname)
 
