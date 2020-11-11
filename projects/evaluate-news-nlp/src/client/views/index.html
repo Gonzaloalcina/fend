@@ -21,14 +21,19 @@
         <main>
             <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
+                    <input id="url" type="text" name="input" value="" placeholder="http://">
+                    <div id="error">Please enter a valid URL</div>
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             <section>
 
             <section>
                 <strong>Form Results:</strong>
-                <div id="results"></div>
+                <div id="results">
+                    <div id="polarity"></div>
+                    <div id="confidence"></div>
+                    <div id="subjectivity"></div>
+                </div>    
             </section>
         </main>
 
