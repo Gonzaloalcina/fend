@@ -1,3 +1,4 @@
+
 const dotenv = require("dotenv");
 dotenv.config();
 const API_KEY = process.env.API_KEY;
@@ -19,6 +20,7 @@ app.use(cors());
 
 app.use(express.static("dist"));
 
+//Get Route
 app.get("/", (req, res) => {
   res.sendFile("dist/index.html");
 });
@@ -27,6 +29,7 @@ app.get("/test", (req, res) => {
   res.send(mockAPIResponse);
 });
 
+//Post Route
 app.post("/article", async (req, res) => {
   const resp = await fetch(`${baseUrl}${API_KEY}&lang=auto&url=${req.body}`);
 
