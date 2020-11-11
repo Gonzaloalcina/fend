@@ -18,7 +18,7 @@ app.use(cors());
 
 app.use(express.static("dist"));
 
-//
+//Meaningcloud credentials for API
 
 const baseUrl = "https://api.meaningcloud.com/sentiment-2.1?key=";
 
