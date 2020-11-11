@@ -1,4 +1,4 @@
-
+// Require hidden api key
 const dotenv = require("dotenv");
 dotenv.config();
 const API_KEY = process.env.API_KEY;
@@ -6,8 +6,6 @@ const API_KEY = process.env.API_KEY;
 const path = require("path");
 const mockAPIResponse = require("./mockAPI");
 const fetch = require("node-fetch");
-
-const baseUrl = "https://api.meaningcloud.com/sentiment-2.1?key=";
 
 const express = require("express");
 const app = express();
@@ -19,6 +17,10 @@ const cors = require("cors");
 app.use(cors());
 
 app.use(express.static("dist"));
+
+//
+
+const baseUrl = "https://api.meaningcloud.com/sentiment-2.1?key=";
 
 //Get Route
 app.get("/", (req, res) => {
