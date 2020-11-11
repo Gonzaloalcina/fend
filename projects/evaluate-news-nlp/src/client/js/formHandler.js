@@ -113,9 +113,7 @@ function handleSubmit(event) {
     confidence.innerHTML = '';
 
     postData(formUrl)
-      .then(updateUI(data)) 
-        
-      
+      .then(updateUI(data))       
   }
 
 }
