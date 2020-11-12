@@ -1,26 +1,30 @@
 // Require hidden api key
 const dotenv = require("dotenv");
 dotenv.config();
-const API_KEY = process.env.API_KEY;
 
+//Dependencies
 const path = require("path");
 const mockAPIResponse = require("./mockAPI");
 const fetch = require("node-fetch");
 
+//Server
 const express = require("express");
 const app = express();
 
+//Middleware
 const bodyParser = require("body-parser");
 app.use(bodyParser.text());
 
+//Origin allowance
 const cors = require("cors");
 app.use(cors());
 
+//Main project folder
 app.use(express.static("dist"));
 
 //Meaningcloud credentials for API
-
 const baseUrl = "https://api.meaningcloud.com/sentiment-2.1?key=";
+const API_KEY = process.env.API_KEY;
 
 //Get Route
 app.get("/", (req, res) => {
@@ -45,6 +49,7 @@ app.post("/article", async (req, res) => {
   }
 });
 
+//Port and listening
 app.listen(8081, () => {
   console.log(`app running at http://localhost:8081`);
 });
