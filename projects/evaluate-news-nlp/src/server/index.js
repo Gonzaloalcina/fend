@@ -33,8 +33,10 @@ app.get("/test", (req, res) => {
 
 //Post Route
 app.post("/article", async (req, res) => {
-  const resp = await fetch(`${baseUrl}${API_KEY}&lang=auto&url=${req.body}`);
-
+  let endpoint = `${baseUrl}${API_KEY}&lang=auto&url=${req.body}`;
+  console.log(endpoint);
+  console.log(JSON.stringify(req.body));
+  const resp = await fetch(endpoint, {method: "POST"});
   try {
     const data = await resp.json();
     res.send(data);

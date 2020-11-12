@@ -21,7 +21,7 @@ function handleSubmit(event) {
     confidence.innerHTML = '';
 
     postData(formUrl)
-      .then(updateUI(formUrl));       
+    .then((data) => updateUI(data));       
   }
 
 }
@@ -32,9 +32,9 @@ const postData = async(url = '') => {
     credentials: 'same-origin',
     mode: 'cors',
     headers: {
-      'Content-Type': 'application/json',
+       'Content-Type': 'text/plain',
     },
-    body: JSON.stringify({'url': url}),
+    body: url,
   });
 
   try {
