@@ -9,8 +9,8 @@ import './styles/resets.scss'
 
 console.log(checkForUrl);
 
-alert("I EXIST")
-console.log("CHANGE!!");
+alert("Welcome to my natural process language app")
+console.log("I'm working :)");
 
 export {
     checkForUrl,
