@@ -1,14 +1,30 @@
-// Import the js file to test
+// import the js file to test
 import { checkForUrl } from "../src/client/js/urlChecker"
 
-// The describe() function takes two arguments - a string description, and a test suite as a callback function.  
-// A test suite may contain one or more related tests    
-describe("Testing the submit functionality", () => {
-    // The test() function has two arguments - a string description, and an actual test as a callback function.  
-    test("Testing the handleSubmit() function", () => {
-           // Define the input for the function, if any, in the form of variables/array
-           // Define the expected output, if any, in the form of variables/array
-           // The expect() function, in combination with a Jest matcher, is used to check if the function produces the expected output
-           // The general syntax is `expect(myFunction(arg1, arg2, ...)).toEqual(expectedValue);`, where `toEqual()` is a matcher
-           expect(checkForUrl).toBeDefined();
-})});
+// the test with http/https protocol in the URL
+describe("testing the UI with and url protocol", () => {
+    test("with https, everything ok", () => {
+        const input = "https://www.lagloriavegana.com";
+        expect(checkForUrl(input)).toBe(true);
+    });
+    test("with http, everything ok", () => {
+        const input = "http://www.lagloriavegana.com";
+        expect(checkForUrl(input)).toBe(true);
+    });
+});
+
+// the test without http/https protocol in the URL
+describe("testing without http protocol", () => {
+    test("with only www, everything ok", () => {
+        const input = "www.lagloriavegana.com";
+        expect(checkForUrl(input)).toBe(true);
+    });
+    test("just adress.com, everything ok", () => {
+        const input = "lagloriavegana.com";
+        expect(checkForUrl(input)).toBe(true);
+    });
+    test("bad typing, error", () => {
+        const input = "la gloria vegana . com";
+        expect(checkForUrl(input)).toBe(false);
+    });
+});
