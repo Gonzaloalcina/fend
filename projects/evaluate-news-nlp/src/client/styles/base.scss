@@ -1,14 +1,26 @@
+$primary-color: #2B2D42;
+$secondary-color: #8D99AE;
+$tertiary-color: #EDF2F4;
+$font-stack: 'Nunito Sans', sans-serif;
+
 body {
+    font: 100% $font-stack;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: $tertiary-color;
 }
 
 main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
     flex: 2;
+    padding: 0px 160px;
 }
 
 section {
-    max-width: 800px;
-    margin: 50px auto;
+    width: 50%;
+    margin: auto;
 }

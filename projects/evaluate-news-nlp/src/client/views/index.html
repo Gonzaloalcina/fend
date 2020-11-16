@@ -5,6 +5,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Test</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     </head>
 
     <body>
@@ -19,15 +21,16 @@
         </header>
 
         <main>
-            <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="url" type="text" name="input" value="" placeholder="http://">
+            <section id="user">
+                <form class="flex-form" onsubmit="return Client.handleSubmit(event)">
+                    <div id="title"><h1>Sentiment<br> Analysis Tool</h1></div>
+                    <input id="url" type="text" name="input" value="" placeholder="Enter your URL here">
                     <div id="error">Please enter a valid URL</div>
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                    <input id="cta" type="submit" name="" value="Go!" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             </section>
 
-            <section>
+            <section id="dinamic">
                 <strong>Form Results:</strong>
                 <div id="results">
                     <div id="polarity"></div>

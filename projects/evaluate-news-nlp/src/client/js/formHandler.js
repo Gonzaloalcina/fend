@@ -82,7 +82,7 @@ function polarityText(score) {
 };
 
 
-export { handleSubmit, polarityText }
+export { handleSubmit, polarityText };
 
 
 
