@@ -1,5 +1,7 @@
 // import the js file to test
 import { checkForUrl } from "../src/client/js/urlChecker"
+require("babel-core/register");
+require("babel-polyfill");
 
 // the test with http/https protocol in the URL
 describe("testing the UI with and url protocol", () => {
