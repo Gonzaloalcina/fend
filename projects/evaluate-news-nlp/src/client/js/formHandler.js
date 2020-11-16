@@ -51,12 +51,38 @@ const postData = async(url = '') => {
 //Update UI with collected data
 function updateUI(data) {
   console.log(data)
-  polarity.innerHTML = `Polarity: ${data.score_tag}`;
+  polarity.innerHTML = "Polarity: " + polarityText(data.score_tag);
   confidence.innerHTML = `Confidence: ${data.confidence}`;
   subjectivity.innerHTML = `Subjectivity: ${data.subjectivity}`;
 }
 
-export { handleSubmit }
+//Function to rewrite the polarity score
+function polarityText(score) {
+  let e;
+  switch(score) {
+    case "P+":
+      e = "STRONG POSITIVE";
+    break;
+    case "P":
+      e = "POSITIVE";
+    break;
+    case "NEU":
+      e = "NEUTRAL";
+    break;
+    case "N":
+      e = "NEGATIVE";
+    break;
+    case "N+":
+      e = "STRONG POSITIVE";
+    break;
+    default:
+      e = "NO SENTIMENT";
+  }
+  return e;
+};
+
+
+export { handleSubmit, polarityText }
 
 
 
