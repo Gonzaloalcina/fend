@@ -15,7 +15,7 @@ This project requires you to create a simple app of natural language processing 
 * Notion (organization)
 * MeaningCloud (API)
 * Miro (mockup)
-* [Blush] (https://blush.design/)
+* [Blush](https://blush.design/)
 * [Coolors](https://coolors.co/)
 * [Google Fonts](https://fonts.google.com/)
 
