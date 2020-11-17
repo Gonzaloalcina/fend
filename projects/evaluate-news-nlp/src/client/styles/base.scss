@@ -9,6 +9,23 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background-color: $tertiary-color;
+
+    h1, h2, p, input::placeholder {
+        color: $primary-color;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    p, #cta {
+        font-size: 18px;
+    }
+
 }
 
 main {

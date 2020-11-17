@@ -6,17 +6,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Test</title>
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&family=Philosopher&display=swap" rel="stylesheet">
     </head>
 
     <body>
 
         <header>
-            <div class="">
-                Logo
+            <div id="logo">
+                <p>SAT</p>
             </div>
-            <div class="">
-                navigation
+            <div id="nav">
+                <p>A project for Udacity</p>
             </div>
         </header>
 
@@ -25,13 +26,16 @@
                 <form class="flex-form" onsubmit="return Client.handleSubmit(event)">
                     <div id="title"><h1>Sentiment<br> Analysis Tool</h1></div>
                     <input id="url" type="text" name="input" value="" placeholder="Enter your URL here">
-                    <div id="error">Please enter a valid URL</div>
+                    <div id="error"><p>Please enter a valid URL</p></div>
                     <input id="cta" type="submit" name="" value="Go!" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             </section>
 
             <section id="dinamic">
-                <strong>Form Results:</strong>
+                <div id="image">
+                    <img src="https://blush.design/api/download?shareUri=kVOVV6Etc&w=800&h=800&fm=png" alt="funny faces">
+                </div>
+                <h2><strong>Form Results:</strong></h2>
                 <div id="results">
                     <div id="polarity"></div>
                     <div id="confidence"></div>

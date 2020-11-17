@@ -4,7 +4,7 @@ $tertiary-color: #EDF2F4;
 $font-stack: 'Nunito Sans', sans-serif;
 
 form {
-    max-width: 50%;
+    max-width: 80%;
 }
 
 section#user {
@@ -28,6 +28,18 @@ section#user {
         border: 0px;
         float: right;
         padding: 10px 0px;
+        cursor: pointer;
     }
 
+    input#cta:hover {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+        transition: background-image 0.3s ease;
+    }
+}
+
+section#dinamic {
+    img {
+        width: 100%;
+        height: auto;
+    }
 }

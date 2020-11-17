@@ -1,5 +1,11 @@
 header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     padding: 10px 40px;
+    
+    #logo p{
+        font-family: 'Philosopher', sans-serif;
+        font-size: 32px;
+    }
 }
