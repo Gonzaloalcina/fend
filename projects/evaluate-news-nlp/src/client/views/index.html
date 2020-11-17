@@ -4,14 +4,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Test</title>
+        <title>Sentiment Analysis Tool</title>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&family=Philosopher&display=swap" rel="stylesheet">
     </head>
 
     <body>
-
         <header>
             <div id="logo">
                 <p>SAT</p>
@@ -48,9 +47,7 @@
             <p>Powered by Meaningcloud</p>
         </footer>
         <script>
-            // Check that service workers are supported
             if ('serviceWorker' in navigator) {
-              // Use the window load event to keep the page load performant
               window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/service-worker.js');
               });
