@@ -15,7 +15,7 @@ function handleSubmit(event) {
   console.log('Form submitted');
 
   if(Client.checkForUrl(formUrl)) {
-    error.style.visibility = 'hidden';
+    error.style.display = 'none';
 
     polarity.innerHTML = '';
     subjectivity.innerHTML = '';
@@ -23,7 +23,7 @@ function handleSubmit(event) {
 
     postData(formUrl)
     .then((data) => updateUI(data));       
-  }
+  } 
 
 }
 

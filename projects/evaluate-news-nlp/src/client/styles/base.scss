@@ -20,9 +20,11 @@ body {
 
     h2 {
         font-size: 24px;
+        text-align: center;
+        margin-bottom: 45px;
     }
 
-    p, #cta {
+    p, #cta, #results {
         font-size: 18px;
     }
 
@@ -40,4 +42,23 @@ main {
 section {
     width: 50%;
     margin: auto;
+}
+
+@media only screen and (max-width: 780px) {
+    main {
+        flex-direction: column;
+        padding: 0px;
+        justify-content: space-evenly;
+    }
+
+    section {
+        width: 70%;
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    section {
+        width: 90%;
+    }
 }

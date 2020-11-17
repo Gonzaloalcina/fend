@@ -9,3 +9,12 @@ header {
         font-size: 32px;
     }
 }
+
+@media only screen and (max-width: 400px) {
+    header {
+        width: 90%;
+        flex-direction: row;
+        margin: auto;
+        padding: 0;
+    }
+}

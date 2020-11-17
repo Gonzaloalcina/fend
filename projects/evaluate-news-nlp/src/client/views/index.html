@@ -25,7 +25,7 @@
             <section id="user">
                 <form class="flex-form" onsubmit="return Client.handleSubmit(event)">
                     <div id="title"><h1>Sentiment<br> Analysis Tool</h1></div>
-                    <input id="url" type="text" name="input" value="" placeholder="Enter your URL here">
+                    <input id="url" type="text" name="input" value="" placeholder="https://">
                     <div id="error"><p>Please enter a valid URL</p></div>
                     <input id="cta" type="submit" name="" value="Go!" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
@@ -35,11 +35,11 @@
                 <div id="image">
                     <img src="https://blush.design/api/download?shareUri=kVOVV6Etc&w=800&h=800&fm=png" alt="funny faces">
                 </div>
-                <h2><strong>Form Results:</strong></h2>
+                <h2><strong>Results...</strong></h2>
                 <div id="results">
-                    <div id="polarity"></div>
-                    <div id="confidence"></div>
-                    <div id="subjectivity"></div>
+                    <div id="polarity" class="form_res"></div>
+                    <div id="confidence" class="form_res"></div>
+                    <div id="subjectivity" class="form_res"></div>
                 </div>    
             </section>
         </main>
