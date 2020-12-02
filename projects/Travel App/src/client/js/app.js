@@ -9,7 +9,7 @@ let newDate = d.toLocaleString('en-US', { month: 'long', day: 'numeric', year:'n
 
 document.getElementById('generate').addEventListener('click', action);
 
-function action(e){
+export function action(e){
     const postalCode = document.getElementById('zip').value;
     const feelings = document.getElementById('feelings').value;
     console.log(newDate);
@@ -30,7 +30,7 @@ function action(e){
 
 
 //Async GET
-const getTemp = async (baseUrl, postalCode, apiKey) => {
+export const getTemp = async (baseUrl, postalCode, apiKey) => {
     const response = await fetch(baseUrl + postalCode + ',us' + '&units=metric' + '&APPID=' + apiKey);
     console.log(response);
     try {
@@ -45,7 +45,7 @@ const getTemp = async (baseUrl, postalCode, apiKey) => {
 }
 
 //Async POST
-const postData = async (url = '', data = {}) => {
+export const postData = async (url = '', data = {}) => {
     const postRequest = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
@@ -66,7 +66,7 @@ const postData = async (url = '', data = {}) => {
 }
 
 //User Interface 
-const updateUI = async () => {
+export const updateUI = async () => {
     const request = await fetch('http://localhost:8000/getData');
     try {
         const allData = await request.json();
