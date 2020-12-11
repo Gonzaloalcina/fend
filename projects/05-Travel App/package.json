@@ -1,0 +1,24 @@
+{
+  "name": "travel-app-udacity",
+  "versiom": "1.0",
+  "description": "Udacity's Capstone Project",
+  "main": "index-js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gonzalo Alcina",
+  "license": "MIT",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "05-Travel App"
+  },
+  "keywords": [
+    "arteyvida"
+  ],
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
