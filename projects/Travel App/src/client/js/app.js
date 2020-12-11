@@ -27,8 +27,6 @@ export function action(e){
     })
 }
 
-
-
 //Async GET
 export const getTemp = async (baseUrl, postalCode, apiKey) => {
     const response = await fetch(baseUrl + postalCode + ',us' + '&units=metric' + '&APPID=' + apiKey);
