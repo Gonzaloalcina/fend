@@ -4,7 +4,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
-    entry: '/src/client/index.js',
+    entry: './src/client/index.js',
     output: {
         libraryTarget: 'var',
         library: 'Client'
@@ -31,8 +31,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: "/src/client/views/index.html",
-            filename: "/index.html",
+            template: "./src/client/views/index.html",
+            filename: "./index.html",
         }),
         new CleanWebpackPlugin({
             // Simulate the removal of files

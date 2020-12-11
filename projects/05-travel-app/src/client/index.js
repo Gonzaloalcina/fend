@@ -1,8 +1,8 @@
 // import main functions of the app.js
-import {action} from './js/app'
-import {getTemp} from './js/app'
-import {postData} from '.js/app'
-import {updateUI} from '.js/app'
+import {action} from './js/app.js'
+import {getTemp} from './js/app.js'
+import {postData} from '.js/app.js'
+import {updateUI} from '.js/app.js'
 
 //import styles
 import './styles/style.scss'
