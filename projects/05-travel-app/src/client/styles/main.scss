@@ -66,7 +66,12 @@ body {
 
 #date-departure {
    grid-area: date-dep;
-   width: 100%;
+   width: 160px;
+}
+
+#date-return {
+    grid-area: date-ret;
+    width: 160px;
 }
 
 .entry {
