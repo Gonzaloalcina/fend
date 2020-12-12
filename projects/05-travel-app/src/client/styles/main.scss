@@ -14,7 +14,7 @@ body {
     grid-template-areas:
     "title title"
     "city data"
-    "feel data"
+    "date-dep data"
     "button data";
     justify-content: center;
     justify-items: start;
@@ -41,7 +41,7 @@ body {
         grid-template-areas:
         "title"
         "city"
-        "feel"
+        "date-dep"
         "button"
         "data";
         grid-gap: 1em;
@@ -62,8 +62,8 @@ body {
     width: 80%;
 }
 
-.feel {
-   grid-area: feel;
+.departure {
+   grid-area: date-dep;
    width: 70%;
 }
 

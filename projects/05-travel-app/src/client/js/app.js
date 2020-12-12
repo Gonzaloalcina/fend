@@ -11,7 +11,7 @@ document.getElementById('generate').addEventListener('click', action);
 
 export function action(e){
     const destCity = document.getElementById('city').value;
-    const feelings = document.getElementById('feelings').value;
+    const depDate = document.getElementById('date-departure').value;
     console.log(newDate);
  
     getTemp(baseUrl,destCity, apiKey)
@@ -19,7 +19,7 @@ export function action(e){
          if(String(data.cod) === '404'){
             alert('Wrong zip code, try again!');
         } else {
-            postData('http://localhost:8000/addData', { date: newDate, temp: data.main.temp, feel: feelings})
+            postData('http://localhost:8000/addData', { date: newDate, temp: data.main.temp, feel: depDate})
             .then(function(){
             //User Interface
             updateUI()
