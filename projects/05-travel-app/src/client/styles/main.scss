@@ -1,12 +1,12 @@
 
-/*General Styles*/
+/* general styles */
 body {
     font-family: 'Nunito', sans-serif;
     background-color: #E0EEF6;
     padding: 2%;
 }
 
-/*Main grid styles*/
+/* main grid styles */
 #app {
     display: grid;
     grid-template-columns: 40% 40%;
@@ -15,7 +15,8 @@ body {
     "title title"
     "city data"
     "date-dep data"
-    "button data";
+    "date-ret data"
+    "button button";
     justify-content: center;
     justify-items: start;
     align-items: center;
@@ -42,6 +43,7 @@ body {
         "title"
         "city"
         "date-dep"
+        "date-ret"
         "button"
         "data";
         grid-gap: 1em;
@@ -51,7 +53,7 @@ body {
     }
 }
 
-/*Grid areas*/
+/* grid areas */
 .headline {
     grid-area: title;
     margin: auto;
@@ -62,9 +64,9 @@ body {
     width: 80%;
 }
 
-.departure {
+#date-departure {
    grid-area: date-dep;
-   width: 70%;
+   width: 100%;
 }
 
 .entry {
@@ -77,7 +79,7 @@ body {
     margin: auto;
 }
 
-/*  Basic Styling To Override Default For Basic HTML Elements */
+/*  basic styling to override default for basic HTML elements */
 label {
     display: block;
     font-size: 18px;
@@ -124,17 +126,17 @@ textarea {
     padding-bottom: 3%;
 }
 
-/*UI Elements*/
+/* UI elements */
 #date, #temp, #content {
     font-family: 'Nunito', sans-serif;
     font-size: 18px;
 }
 
-/*Button*/
+/* button */
 .push {
     grid-area: button;
     width: 100%;
-    height: 80%;
+    height: 100%;
     margin: auto;
 }
 
@@ -143,14 +145,14 @@ button {
     background: #333333;
     color: #fff;
     cursor: pointer;
-    width: 100%;
-    height: 80%;
+    width: 45%;
+    height: 50px;
     border: none;
     border-radius: 10px;
     box-shadow: 2px 4px 5px #444;
 }
 
-/* Reset style for HTML element on active to have no border*/
+/* reset style for HTML element on active to have no border*/
 input:focus,
 select:focus,
 textarea:focus,
@@ -158,7 +160,7 @@ button:focus {
     outline: none;
 }
 
-/* Style for Placeholder Text*/
+/* style for placeholder text*/
 ::placeholder { /* Firefox, Chrome, Opera */ 
     color: #253031; 
     font-family: 'Nunito', sans-serif;
