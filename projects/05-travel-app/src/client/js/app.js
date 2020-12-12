@@ -78,6 +78,14 @@
 //     }
 // }
 
-
+export function theBtnIsWorking(event) {
+    event.preventDefault()
+    console.log('I\'m connected');
+    const city = document.getElementById('city').value;
+    console.log(`The city is ${city}`);
+    const departureDate = document.getElementById('date-departure').value;
+    const returnDate = document.getElementById('date-return').value;
+    console.log(`The dates are ${departureDate} and ${returnDate}`);
+}
 
 
