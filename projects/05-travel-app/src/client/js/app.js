@@ -10,11 +10,11 @@ let newDate = d.toLocaleString('en-US', { month: 'long', day: 'numeric', year:'n
 document.getElementById('generate').addEventListener('click', action);
 
 export function action(e){
-    const postalCode = document.getElementById('zip').value;
+    const destCity = document.getElementById('city').value;
     const feelings = document.getElementById('feelings').value;
     console.log(newDate);
  
-    getTemp(baseUrl,postalCode, apiKey)
+    getTemp(baseUrl,destCity, apiKey)
     .then(function (data){
          if(String(data.cod) === '404'){
             alert('Wrong zip code, try again!');
@@ -28,8 +28,8 @@ export function action(e){
 }
 
 //Async GET
-export const getTemp = async (baseUrl, postalCode, apiKey) => {
-    const response = await fetch(baseUrl + postalCode + ',us' + '&units=metric' + '&APPID=' + apiKey);
+export const getTemp = async (baseUrl, destCity, apiKey) => {
+    const response = await fetch(baseUrl + destCity + ',us' + '&units=metric' + '&APPID=' + apiKey);
     console.log(response);
     try {
         const data = await response.json();

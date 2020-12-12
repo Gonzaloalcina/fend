@@ -13,7 +13,7 @@ body {
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-areas:
     "title title"
-    "zip data"
+    "city data"
     "feel data"
     "button data";
     justify-content: center;
@@ -40,7 +40,7 @@ body {
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
         grid-template-areas:
         "title"
-        "zip"
+        "city"
         "feel"
         "button"
         "data";
@@ -57,9 +57,9 @@ body {
     margin: auto;
 }
 
-.zip {
-    grid-area: zip;
-    width: 50%;
+.city {
+    grid-area: city;
+    width: 80%;
 }
 
 .feel {
@@ -157,6 +157,7 @@ textarea:focus,
 button:focus {
     outline: none;
 }
+
 /* Style for Placeholder Text*/
 ::placeholder { /* Firefox, Chrome, Opera */ 
     color: #253031; 

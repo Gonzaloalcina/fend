@@ -32,10 +32,19 @@ function listening() {
     console.log(`running on localhost: ${port}`);
 }
 
-//Get route that returns the project data
-app.get('/getData', (req, res)=>{
-    console.log('get data');
-    res.send(projectData);
+// Setup API credentials
+const geonamesBase = 'http://.api.geonames.org/searchJSON?q=';
+const geonamesUser = `&maxRows=1&fuzzy=0.6&username=${process.env.geonamesApikey}`;
+
+//Get route that returns the project data. Do I need this???
+// app.get('/getData', (req, res)=>{
+//     console.log('get data');
+//     res.send(projectData);
+// });
+
+// Get route
+app.get('/', function (req,res) {
+    res.sendFile('dist/index.html')
 });
 
 //Post route receiving temp, date and user response
@@ -46,3 +55,5 @@ app.post('/addData', (req, res)=>{
     projectData["date"] = data.date;
     res.send(projectData);
 });
+
+
