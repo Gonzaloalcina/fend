@@ -2,16 +2,23 @@
 const dotenv = require("dotenv");
 dotenv.config();
 
+// fetch for functions
 const fetch = require('node-fetch');
 
-// main function with event listener
-export async function theBtnIsWorking(event) {
+// store data from UI with event listeners and variables
+const submitBtn = document.getElementById('generate');
 
+
+
+// main function with event listener
+const theBtnIsWorking = function(e) {
+    e.preventDefault;
+    submitBtn.addEventListener('submit', theUserTrip);
 };
 
 // secundary function with the trip process (postData route)
-export function theUserTrip(e) {
-
+export function theUserTrip() {
+    console.log('hello developer!');
 };
 
 // geonames function

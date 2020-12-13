@@ -1,6 +1,6 @@
 // checker function
-function tripChecker() {
-
+function theTripChecker() {
+    console.log ('I will check the UI');
 };
 
-export {tripChecker};
+export {theTripChecker};

@@ -17,6 +17,9 @@ module.exports = {
     optimization: {
         minimizer: [new OptimizeCssAssetsWebpackPlugin(), new TerserPlugin()],
     },
+    node: {
+        fs: "empty"
+    },
     module: {
         rules: [
             {

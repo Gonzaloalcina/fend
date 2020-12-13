@@ -1,7 +1,7 @@
 // import main functions
 import {theBtnIsWorking} from './js/app';
 import {theUserTrip} from './js/app';
-import {tripChecker} from './js/tripChecker';
+import {theTripChecker} from './js/tripChecker';
 
 // import styles
 import './styles/main.scss';
@@ -10,6 +10,6 @@ import './styles/main.scss';
 export {
     theBtnIsWorking,
     theUserTrip,
-    tripChecker
+    theTripChecker
 }
 

@@ -11,6 +11,9 @@ module.exports = {
     },
     mode: 'development',
     devtool: 'source-map',
+    node: {
+        fs: "empty"
+    },
     stats: 'verbose',
     module: {
         rules: [
