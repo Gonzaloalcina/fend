@@ -10,15 +10,14 @@ const submitBtn = document.getElementById('generate');
 
 
 
-// main function with event listener
-const theBtnIsWorking = function(e) {
-    e.preventDefault;
-    submitBtn.addEventListener('submit', theUserTrip);
-};
+// event listener in the generate button with the trip data
+submitBtn.addEventListener('click', function (e) {
+    console.log('hello developer');
+});
 
-// secundary function with the trip process (postData route)
+// main function with the trip process (postData route)
 export function theUserTrip() {
-    console.log('hello developer!');
+    console.log('hello developer');
 };
 
 // geonames function
@@ -41,5 +40,5 @@ export const postRoute = async () => {
 
 };
 
-export { theBtnIsWorking };
+
 
