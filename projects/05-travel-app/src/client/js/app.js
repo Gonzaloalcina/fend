@@ -17,6 +17,7 @@ const dateDep = document.getElementById('date-departure');
 const geoUrlBase = 'http://api.geonames.org/searchJSON?q=';
 const geoApi = process.env.GEO_APIKEY;
 const weatherUrlBase = 'https://api.weatherbit.io/v2.0/forecast/daily?lat=';
+const weatherUrlHist = 'https://api.weatherbit.io/v2.0/history/daily?lat=';
 const weatherApi = process.env.WEATHER_APIKEY;
 const pixabayUrlBase = 'https://pixabay.com/api/?key=';
 const pixabayApi = process.env.PIXABAY_APIKEY;
@@ -31,8 +32,13 @@ function theUserTrip(e) {
 };
 
 // geonames function
-async function geoCity () {
-
+async function geoCity (to) {
+    const resp = await fetch(geoUrlBase + to + '&maxRows=10&' + geoApi);
+    try {
+        return await resp.json();
+    } catch (error) {
+        console.log('error', error);
+    }
 };
 
 // getWeather function
