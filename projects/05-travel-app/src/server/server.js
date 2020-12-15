@@ -1,5 +1,5 @@
 // setup empty JS object to act as endpoint for all routes
-let projectData = [];
+let projectData = {};
 
 const fetch = require("node-fetch");
 
@@ -30,12 +30,9 @@ app.get('/', function (req,res) {
 });
 
 // post route
-app.post("/postData", mainServer);
-
-function mainServer (req, res) {
-
-  res.send(projectData);
-};
+app.post("/postData", function (req, res){
+  
+});
 
 
 

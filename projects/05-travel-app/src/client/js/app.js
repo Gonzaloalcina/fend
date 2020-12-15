@@ -5,40 +5,59 @@ dotenv.config();
 // fetch for functions
 const fetch = require('node-fetch');
 
+const info = {};
+
 // store data from UI with event listeners and variables
 const submitBtn = document.getElementById('generate');
+const cityFrom = document.getElementById('from');
+const cityTo = document.getElementById('to');
+const dateDep = document.getElementById('date-departure');
 
+// api keys info
+const geoUrlBase = 'http://api.geonames.org/searchJSON?q=';
+const geoApi = process.env.GEO_APIKEY;
+const weatherUrlBase = 'https://api.weatherbit.io/v2.0/forecast/daily?lat=';
+const weatherApi = process.env.WEATHER_APIKEY;
+const pixabayUrlBase = 'https://pixabay.com/api/?key=';
+const pixabayApi = process.env.PIXABAY_APIKEY;
 
+// event listener to start the app
+submitBtn.addEventListener('click', theUserTrip);
 
-// event listener in the generate button with the trip data
-submitBtn.addEventListener('click', function (e) {
-    console.log('hello developer');
-});
-
-// main function with the trip process (postData route)
-export function theUserTrip() {
+// main function with the trip process, starts in functions.js (postData route)
+function theUserTrip(e) {
+    e.preventDefault();
     console.log('hello developer');
 };
 
 // geonames function
-export const geoCity = async () => {
+async function geoCity () {
 
 };
 
 // getWeather function
-export const weather = async () => {
+async function weather () {
+
+};
+
+async function image () {
+
+}
+
+
+// post data to server function
+async function postRoute (info) {
 
 };
 
 // update UI function
-export const updateUI = async () => {
+async function updateUI () {
 
 };
 
-// post data to server function
-export const postRoute = async () => {
-
-};
+export {
+    theUserTrip
+}
 
 
 

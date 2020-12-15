@@ -10,31 +10,38 @@
   <link rel="stylesheet" href="/projects/05-travel-app/src/client/styles/main.scss">
 </head>
 <body>
-  <main id = "app">
-    <header class ="holder headline">
+  <main id="app">
+    <header class="holder headline">
       <h1>Travel App</h1>
     </header>
-    <section class ="holder city">
-      <label for="city">Destination<label>
-      <input type="text" id="city" placeholder="Enter your destination here" required>
+    <section class="holder dep">
+      <label for="departure">Where are you?<label>
+      <input type="text" id="from" placeholder="..." required>
     </section>
-    <section class ="holder departure">
-      <label for="departure-date">Your departure date</label>
+    <section class="holder dest">
+      <label for="destination">Where do you go?</abel>
+      <input type="text" id="to" placeholder="..." required>
+    </section>
+    <section class="holder departure">
+      <label for="date">When do you leave?</label>
       <input type="date" class= "myInput" id="date-departure" required>
     </section>
-    <section class ="holder return">
-      <label for="return-date">Your return date</label>
-      <input type="date" class= "myInput" id="date-return" required>
-    </section>
-    <section class = "push">
-      <button id="generate" type = "submit"> Go! </button>
+    <section class="push">
+      <button id="generate" type="submit">GO!</button>
     </section>  
-    <section class ="holder entry">
-      <div class = "title">Your trip</div>
-      <div id = "entryHolder">
-        <div id = "date"></div> 
-        <div id = "temp"></div>
-        <div id = "content"></div>
+    <section class="holder entry" id="trip-section">
+      <div class="title" id="trip">Your trip</div>
+      <div id="entryHolder" class="card">
+        <div id="trip-img_container">
+          <div id="trip-img" class="dynamic"></div>
+        </div>
+        <div id="trip-info_container">
+          <div id="trip-from" class="dynamic"></div> 
+          <div id="trip-dest" class="dynamic"></div>
+          <div id="tri-date" class="dynamic"></div>
+          <div id="trip-days" class="dynamic"></div>
+          <div id="trip-weather" class="dynamic"></div>
+        </div> 
       </div>
     </section>
   </main>

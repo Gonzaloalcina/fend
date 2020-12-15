@@ -10,12 +10,12 @@ body {
 #app {
     display: grid;
     grid-template-columns: 40% 40%;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
     "title title"
-    "city data"
-    "date-dep data"
-    "date-ret data"
+    "dep data"
+    "dest data"
+    "date data"
     "button button";
     justify-content: center;
     justify-items: start;
@@ -38,12 +38,12 @@ body {
 @media screen and (max-width: 980px) {
     #app {
         grid-template-columns: 50vw;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-areas:
         "title"
-        "city"
+        "dep"
+        "dest"
         "date-dep"
-        "date-ret"
         "button"
         "data";
         grid-gap: 1em;
@@ -59,22 +59,22 @@ body {
     margin: auto;
 }
 
-.city {
-    grid-area: city;
-    width: 80%;
+#from {
+    grid-area: dep;
+    width: 100%;
 }
 
-#date-departure {
-   grid-area: date-dep;
+#to {
+    grid-area: dest;
+    width: 100%;
+}
+
+#date {
+   grid-area: date;
    width: 160px;
 }
 
-#date-return {
-    grid-area: date-ret;
-    width: 160px;
-}
-
-.entry {
+#trip-section {
     background: #fff;
     grid-area: data;
     width: 100%;
@@ -98,7 +98,7 @@ input {
     font-size: 14px;
     background:#fff;
     color: #253031;
-    width: 100%;
+    width: 160px;
     height: 50px;
     border: none;
     border-radius: 10px;
