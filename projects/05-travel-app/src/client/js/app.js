@@ -1,3 +1,5 @@
+import { response } from "express";
+
 //require hidden key
 const dotenv = require("dotenv");
 dotenv.config();
@@ -9,9 +11,6 @@ const info = {};
 
 // store data from UI with event listeners and variables
 const submitBtn = document.getElementById('generate');
-const cityFrom = document.getElementById('from');
-const cityTo = document.getElementById('to');
-const dateDep = document.getElementById('date-departure');
 
 // api keys info
 const geoUrlBase = 'http://api.geonames.org/searchJSON?q=';
@@ -29,20 +28,36 @@ submitBtn.addEventListener('click', theUserTrip);
 function theUserTrip(e) {
     e.preventDefault();
     console.log('hello developer');
+
+    info['cityFrom'] = document.getElementById('from').value;
+    info['cityTo'] = document.getElementById('to').value;
+    info['dateDep'] = document.getElementById('date-departure').value;
+
+    try {
+        geoCity(info['CityTo'])
+        .then((userTripInfo)=> {
+                const cityToLat = userTripInfo.geonames[0].lat;
+                const citytoLong = userTripInfo.geonames[0].lat;
+
+            return postRoute(info);
+        })          
+    } catch (error) {
+        console.log('error', error);
+    }
 };
 
 // geonames function
 async function geoCity (to) {
-    const resp = await fetch(geoUrlBase + to + '&maxRows=10&' + geoApi);
+    const response = await fetch(geoUrlBase + to + '&maxRows=10&' + geoApi);
     try {
-        return await resp.json();
+        return await response.json();
     } catch (error) {
         console.log('error', error);
     }
 };
 
 // getWeather function
-async function weather () {
+async function weather (cityToLat, cityToLong, cityToDate) {
 
 };
 
@@ -53,7 +68,19 @@ async function image () {
 
 // post data to server function
 async function postRoute (info) {
-
+    const resp = await fetch('http://localhost:8000/postData', {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(info)
+    });
+    try {
+        return await response.json();
+    } catch (error) {
+        console.log('error', error);
+    }
 };
 
 // update UI function
