@@ -14,7 +14,7 @@ const submitBtn = document.getElementById('generate');
 
 // api keys info
 const geoUrlBase = 'http://api.geonames.org/searchJSON?q=';
-const geoApi = process.env.GEO_APIKEY;
+const geoApi = 'username=gonzalo_alcina';
 const weatherUrlBase = 'https://api.weatherbit.io/v2.0/forecast/daily?lat=';
 const weatherUrlHist = 'https://api.weatherbit.io/v2.0/history/daily?lat=';
 const weatherApi = process.env.WEATHER_APIKEY;
@@ -34,11 +34,10 @@ function theUserTrip(e) {
     info['dateDep'] = document.getElementById('date-departure').value;
 
     try {
-        geoCity(info['CityTo'])
+        geoCity(info['cityTo'])
         .then((userTripInfo)=> {
                 const cityToLat = userTripInfo.geonames[0].lat;
                 const citytoLong = userTripInfo.geonames[0].lng;
-
             return postRoute(info);
         })          
     } catch (error) {
@@ -48,7 +47,7 @@ function theUserTrip(e) {
 
 // geonames function
 async function geoCity (to) {
-    const response = await fetch(geoUrlBase + to + '&maxRows=10&' + geoApi);
+    const response = await fetch(`${geoUrlBase}${to}&maxRows=10&${geoApi}`);
     try {
         return await response.json();
     } catch (error) {
