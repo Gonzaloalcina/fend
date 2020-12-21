@@ -1,5 +1,7 @@
 //import { response } from "express";
 
+import fetch from "node-fetch";
+
 //require hidden key
 //const dotenv = require("dotenv");
 //dotenv.config();
@@ -17,7 +19,7 @@ const geoUrlBase = 'http://api.geonames.org/searchJSON?q=';
 const geoApi = 'username=gonzalo_alcina';
 const weatherUrlBase = 'https://api.weatherbit.io/v2.0/forecast/daily?lat=';
 const weatherUrlHist = 'https://api.weatherbit.io/v2.0/history/daily?lat=';
-const weatherApi = process.env.WEATHER_APIKEY;
+const weatherApi = '99fd3b8b3a6b48bfa070bc449cfe43ae';
 const pixabayUrlBase = 'https://pixabay.com/api/?key=';
 const pixabayApi = process.env.PIXABAY_APIKEY;
 
@@ -38,7 +40,7 @@ function theUserTrip(e) {
         .then((userTripInfo)=> {
                 const cityToLat = userTripInfo.geonames[0].lat;
                 const citytoLong = userTripInfo.geonames[0].lng;
-            return postRoute(info);
+            return weather(cityToLat, citytoLong, info['dateDep']);
         })          
     } catch (error) {
         console.log('error', error);
@@ -57,7 +59,12 @@ async function geoCity (to) {
 
 // getWeather function
 async function weather (cityToLat, cityToLong, cityToDate) {
-
+    const response = await fetch(`${weatherUrlBase}${cityToLat}&lon=${cityToLong}&start_date=${cityToDate}&key=${weatherApi}`);
+    try {
+        return await response.json();
+    } catch (error) {
+        console.log('error', error);
+    }
 };
 
 async function image () {
