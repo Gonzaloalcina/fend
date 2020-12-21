@@ -1,7 +1,7 @@
-const path = require('path')
-const webpack = require('webpack')
-const HtmlWebPackPlugin = require("html-webpack-plugin")
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 
 module.exports = {
@@ -12,10 +12,10 @@ module.exports = {
     },
     mode: 'development',
     devtool: 'source-map',
-    node: {
-        fs: "empty",
-        net: "empty"
-    },
+    //node: {
+        //fs: "empty",
+        //net: "empty"
+    //},
     stats: 'verbose',
     module: {
         rules: [

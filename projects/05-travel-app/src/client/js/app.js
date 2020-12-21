@@ -1,11 +1,11 @@
-import { response } from "express";
+//import { response } from "express";
 
 //require hidden key
-const dotenv = require("dotenv");
-dotenv.config();
+//const dotenv = require("dotenv");
+//dotenv.config();
 
 // fetch for functions
-const fetch = require('node-fetch');
+//const fetch = require('node-fetch');
 
 const info = {};
 
@@ -37,7 +37,7 @@ function theUserTrip(e) {
         geoCity(info['CityTo'])
         .then((userTripInfo)=> {
                 const cityToLat = userTripInfo.geonames[0].lat;
-                const citytoLong = userTripInfo.geonames[0].lat;
+                const citytoLong = userTripInfo.geonames[0].lng;
 
             return postRoute(info);
         })          
