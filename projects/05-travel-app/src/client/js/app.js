@@ -82,7 +82,7 @@ async function weather (cityToLat, cityToLong, cityToDate) {
 async function image (e) {
     const response = await fetch(`${pixabayUrlBase}${pixabayApi}&q=${e}+city&image_type=photo`);
     try {
-        await response.json();
+        return await response.json();
     } catch (error) {
         console.log('error', error);
     }
