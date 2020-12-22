@@ -118,7 +118,7 @@ async function updateUI (finalData) {
     let UIDays = document.getElementById('trip-days');
     let UIWeather = document.getElementById('trip-weather');
 
-    UIImg.innerHTML = finalData.img;
+    UIImg.innerHTML = `<img src="${finalData.img}" alt="City"></img>`; 
     UIFrom.innerHTML = finalData.cityFrom;
     UIDest.innerHTML = finalData.cityTo;
     UIDate.innerHTML = finalData.dateDep;
