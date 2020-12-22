@@ -42,10 +42,16 @@ function theUserTrip(e) {
                 const citytoLong = userTripInfo.geonames[0].lng;
             return weather(cityToLat, citytoLong, info['dateDep']);
         })
-        .then((weather) => {
-            info['temp'] = weather['data'][0]['temp'];
-            info['cond'] = weather['data'][0]['weather']['description'];
+        .then((weatherInfo) => {
+            info['temp'] = weatherInfo['data'][0]['temp'];
+            info['cond'] = weatherInfo['data'][0]['weather']['description'];
             return image(info['cityTo']);
+        })
+        .then((imageData) => {
+            if (imageData['hits'].length > 0) {
+                info['img'] = imageData['hits'][0]['webformatURL'];
+            }
+            return postRoute(info);
         })          
     } catch (error) {
         console.log('error', error);
@@ -72,6 +78,7 @@ async function weather (cityToLat, cityToLong, cityToDate) {
     }
 };
 
+// pixabay function
 async function image (e) {
     const response = await fetch(`${pixabayUrlBase}${pixabayApi}&q=${e}+city&image_type=photo`);
     try {
@@ -92,6 +99,7 @@ async function postRoute (info) {
         body: JSON.stringify(info)
     });
     try {
+        console.log(info);
         return await response.json();
     } catch (error) {
         console.log('error', error);
