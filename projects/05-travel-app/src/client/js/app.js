@@ -52,6 +52,9 @@ function theUserTrip(e) {
                 info['img'] = imageData['hits'][0]['webformatURL'];
             }
             return postRoute(info);
+        })
+        .then((finalData) => {
+            updateUI(finalData);
         })          
     } catch (error) {
         console.log('error', error);
@@ -107,8 +110,21 @@ async function postRoute (info) {
 };
 
 // update UI function
-async function updateUI () {
+async function updateUI (finalData) {
+    let UIImg = document.getElementById('trip-img');
+    let UIFrom = document.getElementById('trip-from');
+    let UIDest = document.getElementById('trip-dest');
+    let UIDate = document.getElementById('trip-date');
+    let UIDays = document.getElementById('trip-days');
+    let UIWeather = document.getElementById('trip-weather');
 
+    UIImg.innerHTML = finalData.img;
+    UIFrom.innerHTML = finalData.cityFrom;
+    UIDest.innerHTML = finalData.cityTo;
+    UIDate.innerHTML = finalData.dateDep;
+    UIWeather.innerHTML = finalData.temp;
+    // Conditions
+    // Days
 };
 
 export {
