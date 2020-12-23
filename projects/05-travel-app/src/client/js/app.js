@@ -22,6 +22,8 @@ const weatherUrlHist = 'https://api.weatherbit.io/v2.0/history/daily?lat=';
 const weatherApi = '99fd3b8b3a6b48bfa070bc449cfe43ae';
 const pixabayUrlBase = 'https://pixabay.com/api/?key=';
 const pixabayApi = '19494922-8d701f04ab531f84f25a03fd5';
+const newsURLBase = 'http://newsapi.org/v2/everything?q=';
+const newsApi = '23dd9d3144a74019b4781707a9efd15d';
 
 // event listener to start the app
 submitBtn.addEventListener('click', theUserTrip);
@@ -51,6 +53,13 @@ function theUserTrip(e) {
             if (imageData['hits'].length > 0) {
                 info['img'] = imageData['hits'][0]['webformatURL'];
             }
+            return news(info['cityTo']);   
+        })
+        .then((newsData) => {
+            info['newsTitle'] = newsData['articles'][0]['title'];
+            info['newsDesc'] = newsData['articles'][0]['description'];
+            info['newsImg'] = newsData['articles'][0]['urlToImage'];
+            info['newsUrl'] = newsData['articles'][0]['url'];
             return postRoute(info);
         })
         .then((finalData) => {
@@ -81,6 +90,8 @@ async function weather (cityToLat, cityToLong, cityToDate) {
     }
 };
 
+
+
 // pixabay function
 async function image (e) {
     const response = await fetch(`${pixabayUrlBase}${pixabayApi}&q=${e}+city&image_type=photo`);
@@ -90,6 +101,16 @@ async function image (e) {
         console.log('error', error);
     }
 };
+
+//news function
+async function news(e) {
+    const response = await fetch(`${newsURLBase}${e}&language=en&sortBy=popularity&apiKey=${newsApi}`);
+    try {
+        return await response.json();
+    } catch (error) {
+        console.log('error', error);
+    }
+}
 
 // post data to server function
 async function postRoute (info) {
@@ -111,18 +132,28 @@ async function postRoute (info) {
 
 // update UI function
 async function updateUI (finalData) {
+    // Store elements from the DOM
     let UIImg = document.getElementById('trip-img');
     let UIFrom = document.getElementById('trip-from');
     let UIDest = document.getElementById('trip-dest');
     let UIDate = document.getElementById('trip-date');
     let UIDays = document.getElementById('trip-days');
     let UIWeather = document.getElementById('trip-weather');
+    let UINewsTitle = document.getElementById('trip-news_title');
+    let UINewsDesc = document.getElementById('trip-news_desc');
+    let UINewsImg = document.getElementById('trip-news_img');
+    let UINewsUrl = document.getElementById('trip-news_url');
 
+    // Update with dynamic content
     UIImg.innerHTML = `<img src="${finalData.img}" alt="City"></img>`; 
     UIFrom.innerHTML = finalData.cityFrom;
     UIDest.innerHTML = finalData.cityTo;
     UIDate.innerHTML = finalData.dateDep;
     UIWeather.innerHTML = finalData.temp;
+    UINewsTitle.innerHTML = finalData.newsTitle;
+    UINewsDesc.innerHTML = finalData.newsDesc;
+    UINewsImg.innerHTML = `<img src="${finalData.newsImg}" alt="News Photo"></img>`;
+    UINewsUrl.innerHTML = `<a href="${finalData.newsUrl}" target="_blank">Read more</a>"`;
     // Conditions
     // Days
 };

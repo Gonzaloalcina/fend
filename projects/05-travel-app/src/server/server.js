@@ -37,6 +37,10 @@ app.post("/postData", function (req, res){
   tripData['dateDep'] = req.body.dateDep;
   tripData['temp'] = req.body.temp;
   tripData['img'] = req.body.img;
+  tripData['newsTitle'] = req.body.newsTitle;
+  tripData['newsDesc'] = req.body.newsDesc;
+  tripData['newsImg'] = req.body.newsImg;
+  tripData['newsUrl'] = req.body.newsUrl;
 
   res.send(tripData);
 });
