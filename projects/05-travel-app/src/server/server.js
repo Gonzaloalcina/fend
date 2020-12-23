@@ -41,6 +41,11 @@ app.post("/postData", function (req, res){
   tripData['newsDesc'] = req.body.newsDesc;
   tripData['newsImg'] = req.body.newsImg;
   tripData['newsUrl'] = req.body.newsUrl;
+  tripData['eventName'] = req.body.eventName;
+  tripData['eventTickets'] = req.body.eventTickets;
+  tripData['eventDate'] = req.body.eventDate;
+  tripData['eventImg'] = req.body.eventImg;
+  tripData['eventVenue'] = req.body.eventVenue;
 
   res.send(tripData);
 });

@@ -24,6 +24,8 @@ const pixabayUrlBase = 'https://pixabay.com/api/?key=';
 const pixabayApi = '19494922-8d701f04ab531f84f25a03fd5';
 const newsURLBase = 'http://newsapi.org/v2/everything?q=';
 const newsApi = '23dd9d3144a74019b4781707a9efd15d';
+const ticketUrlBase = 'https://app.ticketmaster.com/discovery/v2/events.json?size=1';
+const ticketApi = 'X6sxpBqX8uh0ftHD11Lp4JPiyvmYw9WD';
 
 // event listener to start the app
 submitBtn.addEventListener('click', theUserTrip);
@@ -60,6 +62,15 @@ function theUserTrip(e) {
             info['newsDesc'] = newsData['articles'][0]['description'];
             info['newsImg'] = newsData['articles'][0]['urlToImage'];
             info['newsUrl'] = newsData['articles'][0]['url'];
+            
+            return tickets(info['cityTo'],info['dateDep']);
+        })
+        .then((eventsData) => {
+            info['eventName'] = eventsData._embedded.events[0].name;
+            info['eventTickets'] = eventsData._embedded.events[0].url;
+            info['eventDate'] = eventsData._embedded.events[0].dates.start.localDate;
+            info['eventImg'] = eventsData._embedded.events[0].images[0].url;
+            info['eventVenue'] = eventsData._embedded.events[0]._embedded.venues[0].name;
             return postRoute(info);
         })
         .then((finalData) => {
@@ -90,8 +101,6 @@ async function weather (cityToLat, cityToLong, cityToDate) {
     }
 };
 
-
-
 // pixabay function
 async function image (e) {
     const response = await fetch(`${pixabayUrlBase}${pixabayApi}&q=${e}+city&image_type=photo`);
@@ -102,9 +111,19 @@ async function image (e) {
     }
 };
 
-//news function
+// news function
 async function news(e) {
     const response = await fetch(`${newsURLBase}${e}&language=en&sortBy=popularity&apiKey=${newsApi}`);
+    try {
+        return await response.json();
+    } catch (error) {
+        console.log('error', error);
+    }
+}
+
+// ticketmaster function
+async function tickets(city, date) {
+    const response = await fetch(`${ticketUrlBase}&city=${city}&startDateTime=${date}T00:00:00Z&sort=relevance,asc&apikey=${ticketApi}`);
     try {
         return await response.json();
     } catch (error) {
@@ -132,19 +151,29 @@ async function postRoute (info) {
 
 // update UI function
 async function updateUI (finalData) {
-    // Store elements from the DOM
+    // store elements from the DOM
+    // trip info
     let UIImg = document.getElementById('trip-img');
     let UIFrom = document.getElementById('trip-from');
     let UIDest = document.getElementById('trip-dest');
     let UIDate = document.getElementById('trip-date');
     let UIDays = document.getElementById('trip-days');
+    // trip weather
     let UIWeather = document.getElementById('trip-weather');
+    // trip news
     let UINewsTitle = document.getElementById('trip-news_title');
     let UINewsDesc = document.getElementById('trip-news_desc');
     let UINewsImg = document.getElementById('trip-news_img');
     let UINewsUrl = document.getElementById('trip-news_url');
+    // trip events
+    let UIEventImg = document.getElementById('trip-event_img');
+    let UIEventDate = document.getElementById('trip-event_date');
+    let UIEventName = document.getElementById('trip-event_name');
+    let UIEventVenue = document.getElementById('trip-event_venue');
+    let UIEventTickets = document.getElementById('trip-event_tickets');
 
-    // Update with dynamic content
+
+    // update with dynamic content
     UIImg.innerHTML = `<img src="${finalData.img}" alt="City"></img>`; 
     UIFrom.innerHTML = finalData.cityFrom;
     UIDest.innerHTML = finalData.cityTo;
@@ -154,6 +183,11 @@ async function updateUI (finalData) {
     UINewsDesc.innerHTML = finalData.newsDesc;
     UINewsImg.innerHTML = `<img src="${finalData.newsImg}" alt="News Photo"></img>`;
     UINewsUrl.innerHTML = `<a href="${finalData.newsUrl}" target="_blank">Read more</a>"`;
+    UIEventImg.innerHTML = `<img src="${finalData.eventImg}" alt="Event"></img>`;
+    UIEventDate.innerHTML = finalData.eventDate;
+    UIEventName.innerHTML = finalData.eventName;
+    UIEventVenue.innerHTML = finalData.eventVenue;
+    UIEventTickets.innerHTML = `<a href="${finalData.eventTickets}" target="_blank">Buy tickets</a>`;
     // Conditions
     // Days
 };
