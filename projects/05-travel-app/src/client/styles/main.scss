@@ -9,30 +9,31 @@ body {
 /* main grid styles */
 #app {
     display: grid;
-    grid-template-columns: 40% 40%;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(7, 1fr);
     grid-template-areas:
-    "title title"
-    "dep data"
-    "dest data"
-    "date data"
-    "button button";
+    "1a 1b 1c title title 1f 1g 1h"
+    "2a dep dep dest dest date date 2h"
+    "3a btn btn btn btn btn btn 3h"
+    "4a card-weather card-weather card-weather card-trip card-trip card-trip 4h"
+    "5a card-weather card-weather card-weather card-trip card-trip card-trip 5h"
+    "6a card-show card-show card-show card-news card-news card-news 6h"
+    "7a card-show card-show card-show card-news card-news card-news 7h";
     justify-content: center;
     justify-items: start;
-    align-items: center;
+    align-items: flex-start;
     grid-gap: 1em;
     background-color: #F5F4F5;
     font-size: 18px;
     color: #253031;
-    width: 50%;
-    height: 50%;
+    //width: 50%;
+    //height: 50%;
     margin: auto;
     padding: 3%;
     border-radius: 10px;
     -webkit-box-shadow: 0px 6px 16px 0px rgba(37,48,49,0.56);
     -moz-box-shadow: 0px 6px 16px 0px rgba(37,48,49,0.56);
     box-shadow: 0px 6px 16px 0px rgba(37,48,49,0.56);
-   
 }
 
 @media screen and (max-width: 980px) {
@@ -59,24 +60,23 @@ body {
     margin: auto;
 }
 
-#from {
+.holder.dep {
     grid-area: dep;
     width: 100%;
 }
 
-#to {
+.holder.dest {
     grid-area: dest;
     width: 100%;
 }
 
-#date {
+.holder.departure {
    grid-area: date;
-   width: 160px;
+   width: 100%;
 }
 
 #trip-section {
     background: #fff;
-    grid-area: data;
     width: 100%;
     height: 80%;
     border-radius: 10px;
@@ -84,12 +84,27 @@ body {
     margin: auto;
 }
 
+#card-weather {
+    grid-area: card-weather;
+}
+
+#card-data {
+    grid-area: card-trip;
+}
+
+#card-events {
+    grid-area: card-show;
+}
+
+#card-news {
+    grid-area: card-news;
+}
+
 /*  basic styling to override default for basic HTML elements */
 label {
     display: block;
     font-size: 18px;
     width: 100%;
-    padding-bottom: 3%;
 }
 
 input {
@@ -102,7 +117,8 @@ input {
     height: 50px;
     border: none;
     border-radius: 10px;
-    padding-left: 10%;
+    padding-left: 2%;
+    width: 90%;
 }
 
 h1 {
@@ -139,7 +155,7 @@ textarea {
 
 /* button */
 .push {
-    grid-area: button;
+    grid-area: btn;
     width: 100%;
     height: 100%;
     margin: auto;
@@ -150,11 +166,22 @@ button {
     background: #333333;
     color: #fff;
     cursor: pointer;
-    width: 45%;
+    width: 100%;
     height: 50px;
     border: none;
     border-radius: 10px;
     box-shadow: 2px 4px 5px #444;
+}
+
+.card {
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+}
+
+.info-container {
+    margin: 3%;
 }
 
 /* reset style for HTML element on active to have no border*/
