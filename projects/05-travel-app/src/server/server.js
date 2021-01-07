@@ -6,7 +6,7 @@ const fetch = require("node-fetch");
 // boilerplate server code
 const path = require('path');
 const express = require('express'); // require express to run server and routes
-app = express(); // start up an instance of app
+const app = express(); // start up an instance of app
 const bodyParser = require('body-parser'); // dependencies
 app.use(bodyParser.json()); // middleware
 const cors = require('cors'); // cors for cross origin allowance
@@ -26,7 +26,7 @@ function listening() {
 
 // get route
 app.get('/', function (req,res) {
-    res.status(200).sendFile('dist/index.html')
+    res.status(200).sendFile('dist/index.html');
 });
 
 // post route
