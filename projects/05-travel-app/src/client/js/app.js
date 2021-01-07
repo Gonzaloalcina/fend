@@ -1,8 +1,8 @@
 import fetch from "node-fetch";
 
 //require hidden key
-//const dotenv = require("dotenv");
-//dotenv.config();
+const dotenv = require("dotenv");
+dotenv.config();
 
 const info = {};
 
@@ -11,15 +11,15 @@ const submitBtn = document.getElementById('generate');
 
 // api keys info
 const geoUrlBase = 'http://api.geonames.org/searchJSON?q=';
-const geoApi = 'username=gonzalo_alcina';
+const geoApi = process.env.GEO_APIKEY;
 const weatherUrlBase = 'https://api.weatherbit.io/v2.0/forecast/daily?lat=';
-const weatherApi = '99fd3b8b3a6b48bfa070bc449cfe43ae';
+const weatherApi = process.env.WEATHER_APIKEY;
 const pixabayUrlBase = 'https://pixabay.com/api/?key=';
-const pixabayApi = '19494922-8d701f04ab531f84f25a03fd5';
+const pixabayApi = proces.env.PIXABAY_APIKEY;
 const newsURLBase = 'http://newsapi.org/v2/everything?q=';
-const newsApi = '23dd9d3144a74019b4781707a9efd15d';
+const newsApi = process.env.NEWS_APIKEY;
 const ticketUrlBase = 'https://app.ticketmaster.com/discovery/v2/events.json?size=1';
-const ticketApi = 'X6sxpBqX8uh0ftHD11Lp4JPiyvmYw9WD';
+const ticketApi = proces.env.TICKET_APIKEY;
 
 // event listener to start the app
 submitBtn.addEventListener('click', theUserTrip);

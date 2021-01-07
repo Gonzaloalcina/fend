@@ -1,30 +1,28 @@
-# Weather-Journal App Project
+# Travel App Project
 
-## Third project of the Udacity's Front End Nanodegree
+## Final project of the Udacity's Front End Nanodegree
 
 ### Overview
-The project requires you to create an asynchronous web app that uses Web API and user data to dynamically update the UI. 
+The project requires you to create a travel app with several API calls and a dynamic UI. In this project I've used geonames, weatherbit, pixabay, newsapi and ticketmaster.
 
-### Steps
-* Set up a local server in `<server.js>` installing Node, Express, Body-Parser and Cors.
-* Add a GET route that returns the `<projectData>`object in the server code. The, add a POST route that adds incoming data tp `<projectData>`.
-
-* Use credentials from OpenWeatherMap
-* Set the `<app.js>` using
-    * `<async>` functions
-    * `<fetch>`
-    * GET and POST requests
-* Update the UI with data that includes
-    * temperature
-    * date
-    * user response
+### Workflow
+* Build basic wireframe using miro app.
+* Clone third Udacity's project as a starter code.
+* First API calls with geonames, weatherbit and pixabay.
+* More API calls for better travel information as news and upcoming shows.
+* Update HTML and SCSS to add responsive layout.
+* Install service workers.
+* Test client and server side code with Jest.
+* Hide API Keys with dotenv.
 
 ### Tools
 * Visual Studio Code
 * Notion
-* OpenWeatherMap
+* Geonames
+* Weatherbit
+* Newsapi
+* Ticketmaster
 * [Coolors](https://coolors.co/)
-* [Html Colors](https://htmlcolorcodes.com/)
 * [Google Fonts](https://fonts.google.com/)
 
 ### Result
