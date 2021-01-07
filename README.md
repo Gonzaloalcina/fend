@@ -1,32 +1,14 @@
-# Travel App Project
+# Front End Nanodegree Program
 
-## Final project of the Udacity's Front End Nanodegree
+This is the repository of my Front End Nanodegree Projects of Udacity.
 
-### Overview
-The project requires you to create a travel app with several API calls and a dynamic UI. In this project I've used geonames, weatherbit, pixabay, newsapi and ticketmaster.
+## Projects
 
-### Workflow
-* Build basic wireframe using miro app.
-* Clone third Udacity's project as a starter code.
-* First API calls with geonames, weatherbit and pixabay.
-* More API calls for better travel information as news and upcoming shows.
-* Update HTML and SCSS to add responsive layout.
-* Install service workers.
-* Test client and server side code with Jest.
-* Hide API Keys with dotenv.
+1. [Personal Blog Website](https://github.com/Gonzaloalcina/personal-blog-project)
+2. [Landing Page](https://github.com/Gonzaloalcina/front-end-nanodegree-udacity/tree/refresh-2019/projects/02-landing-page)
+3. [Weather Journal App](https://github.com/Gonzaloalcina/front-end-nanodegree-udacity/tree/refresh-2019/projects/03-weather-journal-app)
+4. [Evaluate A News Article with Natural Language Processing](https://github.com/Gonzaloalcina/front-end-nanodegree-udacity/tree/refresh-2019/projects/04-evaluate-news-nlp)
+5. [Final project - Travel app](https://github.com/Gonzaloalcina/front-end-nanodegree-udacity/tree/refresh-2019/projects/05-travel-app)
 
-### Tools
-* Visual Studio Code
-* Notion
-* Geonames
-* Weatherbit
-* Newsapi
-* Ticketmaster
-* [Coolors](https://coolors.co/)
-* [Google Fonts](https://fonts.google.com/)
-
-### Result
-![Result](https://github.com/Gonzaloalcina/front-end-nanodegree-udacity/blob/refresh-2019/projects/05-travel-app/result/travell-app.gif)
-
-
+Hope you like it!
 
