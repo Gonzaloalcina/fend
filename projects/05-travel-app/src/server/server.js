@@ -26,7 +26,7 @@ function listening() {
 
 // get route
 app.get('/', function (req,res) {
-    res.sendFile('dist/index.html')
+    res.status(200).sendFile('dist/index.html')
 });
 
 // post route
