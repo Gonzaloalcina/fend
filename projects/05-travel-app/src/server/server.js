@@ -32,7 +32,9 @@ app.get('/', function (req,res) {
 // test route
 app.get('/test', async (req, res) => {
   res.json({message: 'pass!'})
-})
+});
+
+module.exports = {app};
 
 // post route
 app.post("/postData", function (req, res){
