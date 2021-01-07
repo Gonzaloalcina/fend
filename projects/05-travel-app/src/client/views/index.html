@@ -4,72 +4,80 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width", initial-scale=1.0>
   <meta http-equiv="X-UA-Compatible" content="ie-edge">
-  <title>Travel planner</title>
+  <title>Travel App</title>
   <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/projects/05-travel-app/src/client/styles/main.scss">
 </head>
 <body>
   <main id="app">
     <header class="holder headline">
-      <h1>Travel App</h1>
+      <h1>TRAVEL APP</h1>
     </header>
     <section class="holder dep">
-      <label for="departure">Where are you?<label>
+      <label for="departure"><h2 class="input-title">Where are you?</h2><label>
       <input type="text" id="from" placeholder="..." required>
     </section>
     <section class="holder dest">
-      <label for="destination">Where do you go?</abel>
+      <label for="destination"><h2 class="input-title">Where do you go?</h2></abel>
       <input type="text" id="to" placeholder="..." required>
     </section>
     <section class="holder departure">
-      <label for="date">When do you leave?</label>
+      <label for="date"><h2 class="input-title">When do you leave?</h2></label>
       <input type="date" class= "myInput" id="date-departure" required>
     </section>
     <section class="push">
-      <button id="generate" type="submit">GO!</button>
+      <button id="generate" type="submit">SEARCH</button>
     </section> 
     <section id="card-weather" class="card">
- 
-      <div id="trip-weather" class="dynamic info-container">weather
-          <h2 class="card-title">Your weather</h2>
-          <div id="trip-weather_temp">Weather temp</div>
-          <div id="trip-weather_desc">Weather desc</div>
+    <div id="trip-weather" class="dynamic info-container">
+          <h3 class="card-title">The weather</h3>
+          <div id="trip-weather_temp"></div>
     </div>
     </section> 
     <section id="card-data" class="card">
-
       <div id="trip-img_container">
-        <div id="trip-img" class="dynamic">data image</div>
+        <div id="trip-img" class="dynamic"></div>
       </div>
       <div id="trip-data" class="dynamic info-container">
-          <h2 class="card-title">Your trip data</h2>
-        <div id="trip-from" class="dynamic">from</div> 
-        <div id="trip-dest" class="dynamic">dest</div>
-        <div id="trip-date" class="dynamic">date</div>
-        <div id="trip-days" class="dynamic">days</div>
+          <h3 class="card-title">Your trip data</h3>
+        <div id="trip-from" class="dynamic"></div> 
       </div>
     </section>
     <section id="card-events" class="card">
-      <div id="trip-event_img" class="dynamic">event image</div>
+      <div id="trip-event_img" class="dynamic"></div>
       <div id="trip-events" class="dynamic info-container">
-        <h2 class="card-title">Upcoming shows</h2>
-        <div id="trip-event_name" class="dynamic">event name</div>
-        <div id="trip-event_date" class="dynamic">event date</div>
-        <div id="trip-event_venue" class="dynamic">event venue</div>
-        <div id="trip-event_tickets" class="dynamic">event tickets</div>
+        <h3 class="card-title">Upcoming shows</h3>
+        <div id="trip-event_name" class="dynamic"></div>
+        <div id="trip-event_date" class="dynamic"></div>
+        <div id="trip-event_venue" class="dynamic"></div>
+        <div id="trip-event_tickets" class="dynamic"></div>
       </div>  
     </section>
     <section id="card-news" class="card">
-      <div id="trip-news_img" class="dynamic">news image</div>
+      <div id="trip-news_img" class="dynamic"></div>
       <div id="trip-news" class="dynamic info-container">
-        <h2 class="card-title">Latest news</h2>
-        <div id="trip-news_title" class="dynamic">news title</div>
-        <div id="trip-news_desc" class="dynamic">news desc</div>
-        <div id="trip-news_url" class="dynamic">news url</div>
+        <h3 class="card-title">Latest news</h3>
+        <div id="trip-news_title" class="dynamic"></div>
+        <div id="trip-news_desc" class="dynamic"></div>
+        <div id="trip-news_url" class="dynamic"></div>
       </div>  
     </section>
+    <footer id="legal-info">
+      <div class="footer-info">
+        <p class="api-info">Powered by geonames, weatherbit, pixabay, newsapi and ticketmaster.</p>
+      </div>
+    </footer>
   </main>
   <script src="/projects/05-travel-app/src/client/js/app.js" type="text/javascript"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js');
+        });
+    }
+   </script>
 </body>
 </html>

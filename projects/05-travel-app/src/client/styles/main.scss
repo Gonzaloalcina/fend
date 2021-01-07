@@ -1,16 +1,49 @@
 
 /* general styles */
 body {
-    font-family: 'Nunito', sans-serif;
-    background-color: #E0EEF6;
+    font-family: 'Raleway', sans-serif;
     padding: 2%;
-    font-size: 18px;
+    font-size: 14px;
     color: #253031;
 }
 
+h1 {
+    font-size: 24px;
+}
+
 h2 {
-    font-size: 20px;
-    margin: auto;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+h3 {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+}
+
+h4 {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+}
+
+p.card-desc_mini {
+    font-size: 10px;
+    margin: 0;
+}
+
+p.card-desc {
+    margin: 0;
+}
+
+p.api-info {
+    font-size: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #1E2F23;
+    font-weight: bold;
 }
 
 /* main grid styles */
@@ -25,18 +58,14 @@ h2 {
     "4a card-weather card-weather card-weather card-trip card-trip card-trip 4h"
     "5a card-weather card-weather card-weather card-trip card-trip card-trip 5h"
     "6a card-show card-show card-show card-news card-news card-news 6h"
-    "7a card-show card-show card-show card-news card-news card-news 7h";
+    "7a card-show card-show card-show card-news card-news card-news 7h"
+    "8a footer footer footer footer footer footer 8h";
     justify-content: center;
     justify-items: start;
     align-items: flex-start;
     grid-gap: 1em;
-    background-color: #F5F4F5;
     margin: auto;
     padding: 3%;
-    border-radius: 10px;
-    -webkit-box-shadow: 0px 6px 16px 0px rgba(37,48,49,0.56);
-    -moz-box-shadow: 0px 6px 16px 0px rgba(37,48,49,0.56);
-    box-shadow: 0px 6px 16px 0px rgba(37,48,49,0.56);
 }
 
 /* grid areas */
@@ -60,13 +89,8 @@ h2 {
    width: 100%;
 }
 
-#trip-section {
-    background: #fff;
-    width: 100%;
-    height: 80%;
-    border-radius: 10px;
-    padding: 5%;
-    margin: auto;
+footer {
+    grid-area: footer;
 }
 
 #card-weather {
@@ -94,7 +118,7 @@ label {
 
 input {
     display: block;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 14px;
     background:#fff;
     color: #253031;
@@ -103,12 +127,10 @@ input {
     border: none;
     border-radius: 10px;
     width: 100%;
-    padding: 2%;
+    padding: 4%;
     box-sizing: border-box;
-}
+    border: 1px solid #dfe1e5;
 
-h1 {
-    font-size: 24px;
 }
 
 textarea {
@@ -133,7 +155,6 @@ textarea {
     padding-bottom: 3%;
 }
 
-/* UI elements */
 #date, #temp, #content {
     font-family: 'Nunito', sans-serif;
     font-size: 18px;
@@ -149,18 +170,18 @@ textarea {
 
 button {
     font-size: 24px;
-    background: #333333;
+    background: #121212;
     color: #fff;
     cursor: pointer;
     width: 100%;
     height: 50px;
     border: none;
-    border-radius: 10px;
-    box-shadow: 2px 4px 5px #444;
+    border-radius: 8px;
 }
 
+/* style of dynamic content */
 .card {
-    border: 1px solid black;
+    border: 1px solid #dfe1e5;
     border-radius: 8px;
     width: 100%;
     height: 100%;
@@ -168,6 +189,41 @@ button {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
+}
+
+img {
+    max-width: 150px;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+}
+
+@media only screen and (max-width: 980px) {
+    #app {
+        grid-template-columns: repeat(4,1fr);
+        grid-template-areas:
+        "1a title title 1c"
+        "dest dest dest dest"
+        "dep dep date date"
+        "btn btn btn btn"
+        "card-weather card-weather card-weather card-weather"
+        "card-trip card-trip card-trip card-trip"
+        "card-show card-show card-show card-show"
+        "card-news card-news card-news card-news"
+        "footer footer footer footer";
+        grid-gap: 1em;
+        padding: 5%;
+    }
+
+    input {
+        width: 100%;
+    }
 }
 
 /* reset style for HTML element on active to have no border*/
@@ -181,51 +237,17 @@ button:focus {
 /* style for placeholder text*/
 ::placeholder { /* Firefox, Chrome, Opera */ 
     color: #253031; 
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Raleway', sans-serif;
 } 
   
 :-ms-input-placeholder { /* Internet Explorer 10-11 */ 
     color: #253031; 
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Raleway', sans-serif;
 } 
   
 ::-ms-input-placeholder { /* Microsoft Edge */ 
     color: #253031; 
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Raleway', sans-serif;
 } 
 
-/* style of dynamic content */
 
-img {
-    max-width: 150px;
-    margin-right: 10px;
-}
-
-.info-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
-@media only screen and (max-width: 980px) {
-    #app {
-        grid-template-columns: repeat(4,1fr);
-        //grid-template-rows: repeat(8,1fr);
-        grid-template-areas:
-        "1a title title 1c"
-        "dest dest dest dest"
-        "dep dep date date"
-        "btn btn btn btn"
-        "card-weather card-weather card-weather card-weather"
-        "card-trip card-trip card-trip card-trip"
-        "card-show card-show card-show card-show"
-        "card-news card-news card-news card-news";
-        grid-gap: 1em;
-        padding: 5%;
-    }
-
-    input {
-        width: 100%;
-    }
-}

@@ -1,13 +1,8 @@
-//import { response } from "express";
-
 import fetch from "node-fetch";
 
 //require hidden key
 //const dotenv = require("dotenv");
 //dotenv.config();
-
-// fetch for functions
-//const fetch = require('node-fetch');
 
 const info = {};
 
@@ -18,7 +13,6 @@ const submitBtn = document.getElementById('generate');
 const geoUrlBase = 'http://api.geonames.org/searchJSON?q=';
 const geoApi = 'username=gonzalo_alcina';
 const weatherUrlBase = 'https://api.weatherbit.io/v2.0/forecast/daily?lat=';
-const weatherUrlHist = 'https://api.weatherbit.io/v2.0/history/daily?lat=';
 const weatherApi = '99fd3b8b3a6b48bfa070bc449cfe43ae';
 const pixabayUrlBase = 'https://pixabay.com/api/?key=';
 const pixabayApi = '19494922-8d701f04ab531f84f25a03fd5';
@@ -155,12 +149,7 @@ async function updateUI (finalData) {
     // trip info
     let UIImg = document.getElementById('trip-img');
     let UIFrom = document.getElementById('trip-from');
-    let UIDest = document.getElementById('trip-dest');
-    let UIDate = document.getElementById('trip-date');
-    let UIDays = document.getElementById('trip-days');
-    // trip weather
     let UIWeatherTemp = document.getElementById('trip-weather_temp');
-    let UIWeatherDesc = document.getElementById('trip-weather_desc');
     // trip news
     let UINewsTitle = document.getElementById('trip-news_title');
     let UINewsDesc = document.getElementById('trip-news_desc');
@@ -176,22 +165,17 @@ async function updateUI (finalData) {
 
     // update with dynamic content
     UIImg.innerHTML = `<img src="${finalData.img}" alt="City"></img>`; 
-    UIFrom.innerHTML = finalData.cityFrom;
-    UIDest.innerHTML = finalData.cityTo;
-    UIDate.innerHTML = finalData.dateDep;
-    UIWeatherTemp.innerHTML = finalData.weatherTemp;
-    UIWeatherDesc.innerHTML = finalData.weatherDesc;
-    UINewsTitle.innerHTML = finalData.newsTitle;
-    UINewsDesc.innerHTML = finalData.newsDesc;
+    UIFrom.innerHTML = `<p class="card-desc">You are travelling from ${finalData.cityFrom} to ${finalData.cityTo} on ${finalData.dateDep}<p>`;
+    UIWeatherTemp.innerHTML = `<p class="card-desc">The weather in ${finalData.cityTo} will be ${finalData.weatherTemp}º degrees with ${finalData.weatherDesc}<p>`;
+    UINewsTitle.innerHTML = `<h4 class="card-info_title">${finalData.newsTitle}</h4>`;
+    UINewsDesc.innerHTML = `<p class="card-desc_mini">${finalData.newsDesc}<p>`;
     UINewsImg.innerHTML = `<img src="${finalData.newsImg}" alt="News Photo"></img>`;
-    UINewsUrl.innerHTML = `<a href="${finalData.newsUrl}" target="_blank">Read more</a>"`;
+    UINewsUrl.innerHTML = `<a href="${finalData.newsUrl}" target="_blank">Read more</a>`;
     UIEventImg.innerHTML = `<img src="${finalData.eventImg}" alt="Event"></img>`;
     UIEventDate.innerHTML = finalData.eventDate;
-    UIEventName.innerHTML = finalData.eventName;
+    UIEventName.innerHTML = `<h4 class="card-info_title">${finalData.eventName}</h4>`;
     UIEventVenue.innerHTML = finalData.eventVenue;
     UIEventTickets.innerHTML = `<a href="${finalData.eventTickets}" target="_blank">Buy tickets</a>`;
-    // Conditions
-    // Days
 };
 
 export {
