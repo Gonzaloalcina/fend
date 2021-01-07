@@ -1,16 +1,11 @@
-import {describe, expect} from "@jest/globals";
+const app = require('../src/server/server'); // Link to your server file
+const supertest = require('supertest');
+const request = supertest(app);
 
-const request = require("supertest");
-const app = require("../src/server/server");
-
-describe("root path", () => {
-    test("response the get method", done => {
-        request(app)
-            .get("/")
-            .then(response => {
-                expect(response.status).toBe(200);
-                done();
-            });
-    });
+it('gets the test endpoint', async done => {
+    const response = await request.get('/test')
+  
+    expect(response.status).toBe(200)
+    expect(response.body.message).toBe('pass!')
+    done()
 });
-

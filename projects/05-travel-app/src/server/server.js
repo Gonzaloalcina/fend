@@ -29,6 +29,11 @@ app.get('/', function (req,res) {
     res.status(200).sendFile('dist/index.html');
 });
 
+// test route
+app.get('/test', async (req, res) => {
+  res.json({message: 'pass!'})
+})
+
 // post route
 app.post("/postData", function (req, res){
   tripData['cityTo'] = req.body.cityTo;
