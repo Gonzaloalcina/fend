@@ -26,7 +26,7 @@ The project requires you to create a travel app with several API calls and a dyn
 * [Google Fonts](https://fonts.google.com/)
 
 ### Result
-![Result](https://github.com/Gonzaloalcina/fend/blob/refresh-2019/projects/weather-journal-app/website/Gif%20result/Weather%20Journal%20App.gif)
+![Result](https://github.com/Gonzaloalcina/front-end-nanodegree-udacity/blob/refresh-2019/projects/05-travel-app/result/travell-app.gif)
 
 
 
