@@ -33,9 +33,9 @@ app.get('/', function (req,res) {
 app.post("/postData", function (req, res){
   tripData['cityTo'] = req.body.cityTo;
   tripData['cityFrom'] = req.body.cityFrom;
-  tripData['cond'] = req.body.cond;
   tripData['dateDep'] = req.body.dateDep;
-  tripData['temp'] = req.body.temp;
+  tripData['weatherTemp'] = req.body.temp;
+  tripData['weatherDesc'] = req.body.cond;
   tripData['img'] = req.body.img;
   tripData['newsTitle'] = req.body.newsTitle;
   tripData['newsDesc'] = req.body.newsDesc;

@@ -159,7 +159,8 @@ async function updateUI (finalData) {
     let UIDate = document.getElementById('trip-date');
     let UIDays = document.getElementById('trip-days');
     // trip weather
-    let UIWeather = document.getElementById('trip-weather');
+    let UIWeatherTemp = document.getElementById('trip-weather_temp');
+    let UIWeatherDesc = document.getElementById('trip-weather_desc');
     // trip news
     let UINewsTitle = document.getElementById('trip-news_title');
     let UINewsDesc = document.getElementById('trip-news_desc');
@@ -178,7 +179,8 @@ async function updateUI (finalData) {
     UIFrom.innerHTML = finalData.cityFrom;
     UIDest.innerHTML = finalData.cityTo;
     UIDate.innerHTML = finalData.dateDep;
-    UIWeather.innerHTML = finalData.temp;
+    UIWeatherTemp.innerHTML = finalData.weatherTemp;
+    UIWeatherDesc.innerHTML = finalData.weatherDesc;
     UINewsTitle.innerHTML = finalData.newsTitle;
     UINewsDesc.innerHTML = finalData.newsDesc;
     UINewsImg.innerHTML = `<img src="${finalData.newsImg}" alt="News Photo"></img>`;
