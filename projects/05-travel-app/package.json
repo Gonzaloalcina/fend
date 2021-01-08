@@ -20,6 +20,7 @@
   "author": "Gonzalo Alcina",
   "license": "ISC",
   "dependencies": {
+    "all": "0.0.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "cryptiles": "^4.1.3",

@@ -15,11 +15,11 @@ const geoApi = process.env.GEO_APIKEY;
 const weatherUrlBase = 'https://api.weatherbit.io/v2.0/forecast/daily?lat=';
 const weatherApi = process.env.WEATHER_APIKEY;
 const pixabayUrlBase = 'https://pixabay.com/api/?key=';
-const pixabayApi = proces.env.PIXABAY_APIKEY;
+const pixabayApi = process.env.PIXABAY_APIKEY;
 const newsURLBase = 'http://newsapi.org/v2/everything?q=';
 const newsApi = process.env.NEWS_APIKEY;
 const ticketUrlBase = 'https://app.ticketmaster.com/discovery/v2/events.json?size=1';
-const ticketApi = proces.env.TICKET_APIKEY;
+const ticketApi = process.env.TICKET_APIKEY;
 
 // event listener to start the app
 submitBtn.addEventListener('click', theUserTrip);

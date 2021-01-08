@@ -12,10 +12,10 @@ module.exports = {
     },
     mode: 'development',
     devtool: 'source-map',
-    //node: {
-        //fs: "empty",
-        //net: "empty"
-    //},
+    node: {
+        fs: "empty",
+        net: "empty"
+    },
     stats: 'verbose',
     module: {
         rules: [
