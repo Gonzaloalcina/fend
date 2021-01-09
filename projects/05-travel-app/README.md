@@ -19,6 +19,7 @@ The project requires you to create a travel app with several API calls and a dyn
 * Visual Studio Code
 * Notion
 * Geonames
+* Pixabay
 * Weatherbit
 * Newsapi
 * Ticketmaster
