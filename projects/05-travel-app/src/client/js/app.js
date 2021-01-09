@@ -11,15 +11,15 @@ const submitBtn = document.getElementById('generate');
 
 // api keys info
 const geoUrlBase = 'http://api.geonames.org/searchJSON?q=';
-const geoApi = // your key;
+// const geoApi = // your key;
 const weatherUrlBase = 'https://api.weatherbit.io/v2.0/forecast/daily?lat=';
-const weatherApi = // your key;
+// const weatherApi = // your key;
 const pixabayUrlBase = 'https://pixabay.com/api/?key=';
-const pixabayApi = // your key;
+// const pixabayApi = // your key;
 const newsURLBase = 'http://newsapi.org/v2/everything?q=';
-const newsApi = // your key;
+// const newsApi = // your key;
 const ticketUrlBase = 'https://app.ticketmaster.com/discovery/v2/events.json?size=1';
-const ticketApi = // your key;
+// const ticketApi = // your key;
 
 // event listener to start the app
 submitBtn.addEventListener('click', theUserTrip);
